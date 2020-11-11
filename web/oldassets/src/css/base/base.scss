@@ -1,0 +1,53 @@
+body {
+  font-size: 16px;
+  font-family: $font-family--sans-serif;
+  color: #444;
+  background: $color--background;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  position: relative;
+  padding: 1em;
+  @include width-md {
+    padding: 2em;
+  }
+  max-width: 90em;
+  margin: 0 auto;
+}
+
+.container--large {
+  max-width: 120em;
+}
+
+.button {
+  border: 2px solid #000;
+  padding: 0.75em 1em;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 3px;
+  transition: $speed background, $speed color;
+  &:hover {
+    background: $color--black;
+    color: #fff;
+  }
+
+}
+
+
+/* Site */
+.ennyen {
+  max-width: 30em;
+  width: 80%;
+  @include width-md {
+    width: 50%;
+
+    position: relative;
+    left: -4em;
+  }
+}

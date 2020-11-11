@@ -1,0 +1,11 @@
+.symbol--logo {
+  width: 8em;
+  height: 1.8em;
+  @include width-md {
+    width: 10em;
+    height: 2em;
+  }
+  path {
+    fill: $color--primary;
+  }
+}

@@ -1,0 +1,8 @@
+.nav--intro {
+  li {
+    @include width-md {
+      display: inline-block;
+      padding: 0 0.5em;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+
+</div>
+<div class="fullscreen active setting--pos-relative{% if module.settingTextWhiteBox %} fullscreen--has-white-area{% endif %}">
+
+	<div class="setting--hide-under-desktop fullscreen--box setting--pos-relative setting--overflow-hidden setting--image-absolute--md">
+		{% if module.standardImages.first %}{% set transformedImages = craft.imager.transformImage(module.standardImages.first, [
+			{ width: 1200 },
+			{ width: 600 },
+			], {  },
+			{ fillTransforms: true }) %}
+			<img src="{{ craft.imager.base64Pixel(16, 9) }}" class="lazyload--image lazyload" sizes="90vw" srcset="{{ craft.imager.srcset(transformedImages) }}">{% endif %}
+	</div>
+	{% if module.standardBodyText | length or module.standardHeading | length %}
+
+		  <div class="fullscreen--text{% if module.settingTextWhiteBox %} fullscreen--text--over{% endif %} setting--align-center">
+				<div class="setting--z-index-top setting--pos-relative">
+					<div class="heading--large italic setting--margin-bottom">{{ module.standardHeading|nl2br }}</div>
+					<div class="typography typography--large setting--pos-relative">
+						{{ module.standardBodyText }}
+
+						{# % if theme == 'finnes' %}
+								<div class="hours setting--pos-relative  setting--margin-top">
+									<span class="hours--closed setting--display--none">Finnes kafè er stengt idag -</span>
+									<span class="hours--open setting--display--none">Vi har åpent i dag <br>fra</span>
+									<a href="#" class="link hours--link setting--pos-relative">
+									<div class="hours--popup setting--pos-absolute">
+										<div class="hours--popup--box setting--pos-absolute setting--display--none setting--fill--light-grey setting--padding">
+											<div class="hours--popup--box-close setting--pos-absolute"></div>
+											<table>
+												<tbody><tr>
+													<td>Mandag:</td><td class="hours--day-1">Stengt</td>
+												</tr>
+												<tr>
+													<td>Tirsdag:</td><td class="hours--day-2">Stengt</td>
+												</tr>
+												<tr>
+													<td>Onsdag:</td><td class="hours--day-3">10:00 - 16:00</td>
+												</tr>
+												<tr>
+													<td>Torsdag:</td><td class="hours--day-4">10:00 - 16:00</td>
+												</tr>
+												<tr>
+													<td>Fredag:</td><td class="hours--day-5">10:00 - 16:00</td>
+												</tr>
+												<tr>
+													<td>Lørdag:</td><td class="hours--day-6">10:00 - 16:00</td>
+												</tr>
+												<tr>
+													<td>Søndag:</td><td class="hours--day-7">10:00 - 16:00</td>
+												</tr>
+											</tbody></table>
+										</div>
+									</div>
+
+										<span class="hours--closed setting--display--none">Åpningstider</span>
+										<span class="hours--today"></span>
+									</a>
+								</div>
+							</div>
+
+						{% endif % #}
+					</div>
+				</div>
+			</div>
+  {% endif %}
+</div>
+<div class="container">

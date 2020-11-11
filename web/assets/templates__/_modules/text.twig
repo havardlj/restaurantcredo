@@ -1,0 +1,6 @@
+<div class="grid-center js--in-view">
+  <div class="col-8_md-12 wysiwyg typography{{ module.settingAlignCenter == true ? " setting--align-center" }}">
+    {% if module.standardHeading | length %}<div class="heading--medium setting--align-center setting--margin-bottom">{{ module.standardHeading | nl2br | raw }}</div>{% endif %}
+    {{ module.standardBodyText }}
+  </div>
+</div>

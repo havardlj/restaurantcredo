@@ -1,0 +1,77 @@
+{% if entry.settingHeaderInvert is defined and entry.settingHeaderInvert %}{% set headerInvert = true %}{% endif %}
+{% if entry.settingHeaderAbsolute is defined and entry.settingHeaderAbsolute %}{% set headerAbsolute = true %}{% endif %}
+{% extends '_layouts/main-layout' %}
+
+{% block content %}
+
+  {% set journalIds = ['and'] %}
+  {% set journalCount = 0 %}
+
+  {% if entry.type == 'journal' %}
+    {% include '_pages/journalOverview' %}
+  {% else %}
+  <div class="container">
+    <div class="js--in-view">
+      {{ entry.standardBodyText }}
+    </div>
+
+    {% if theme != "credo" %}
+      {% set imagePos = "right" %}
+    {% endif %}
+
+    {% for module in entry.standardContent %}
+      
+      {% if theme != "credo" and module.type.handle == "journal" %}
+        {% if module.customChooseJournal.first()|length %}
+          {% set journalCount = journalCount + 1 %}
+          {% if imagePos == "left" %}
+            {% set imagePos = "right" %}
+          {% else %}
+            {% set imagePos = "left" %}
+          {% endif %}
+          {% set settingTextOverImage = false %}
+        {% endif %}
+      {% endif %}
+
+      {% include '_modules/' ~ module.type.handle %}
+
+      {% if module.type.handle == "journal" and module.customChooseJournal.first()|length %}
+        {% set journalIds = journalIds|merge([module.customChooseJournal.first().id]) %}
+      {% endif %}
+
+    {% endfor %}
+
+    {% set journalIds = journalIds|join(', not ') %}
+
+    {% if theme != "credo" and entry.level == 1 %}
+      {% set journalEntries = craft.entries.section("journal") %}
+      {% set journalEntries = journalEntries.id(journalIds).limit(10 - journalCount) %}
+      {% for journalEntry in journalEntries %}
+
+        {% if journalEntry.categoryDepartment.first() is empty %}
+          {% set journalEntrySlug = "credo" %}
+        {% else %}
+          {% set journalEntrySlug = journalEntry.categoryDepartment.first().slug %}
+        {% endif %}
+
+        {% if journalEntrySlug == theme %}
+          
+          {% if imagePos == "left" %}
+            {% set imagePos = "right" %}
+          {% else %}
+            {% set imagePos = "left" %}
+          {% endif %}
+
+          {% set settingTextOverImage = false %}
+
+          {% include '_modules/journal' %}
+
+        {% endif %}
+
+      {% endfor %}
+    {% endif %}
+
+  </div>
+  {% endif %}
+
+{% endblock %}

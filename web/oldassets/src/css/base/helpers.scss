@@ -1,0 +1,32 @@
+.setting--align-right {
+  text-align: right;
+}
+
+.setting--margin-top {
+  margin-top: 2em;
+}
+
+.setting--margin-top--small {
+  margin-top: 0.5em;
+}
+
+.setting--margin-bottom {
+  margin-bottom: 2em;
+}
+
+.setting--margin-bottom--mobile {
+  margin-bottom: 1em;
+}
+
+
+.setting--order-one {
+  @media all and (max-width: $width--lg) {
+    order: 1;
+  }
+}
+
+.setting--order-two {
+  @media all and (max-width: $width--lg) {
+    order: 2;
+  }
+}

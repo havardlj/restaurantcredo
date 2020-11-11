@@ -1,0 +1,53 @@
+.body {
+   font-family: $font-family--standard;
+   font-size: 16px;
+   color: $color--text;
+   background: $color--light-grey;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   overflow-x: hidden;
+}
+
+.main a {
+   color: $color--primary;
+   border-bottom: 1px solid transparent;
+   transition: color $speed, border-color $speed;
+   &:hover {
+      color: $color--primary;
+      border-color: $color--primary;
+
+   }
+}
+
+.site {
+   flex: 1;
+   flex-basis: auto;
+}
+
+img {
+  // width: 100%;
+  // height: auto;
+}
+
+.container,
+.container--narrow {
+   max-width: $container-max;
+   margin: 0 auto;
+}
+
+.container {
+   padding: $container;
+   @include width-md {
+      padding: 0 $container-md;
+   }
+}
+
+.container--narrow {
+   padding: $container*2;
+   @include width-md {
+      padding: 0 $container-md*2;
+   }
+}

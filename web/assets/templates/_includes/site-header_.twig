@@ -1,0 +1,191 @@
+
+
+<div class="site">
+	<header class="header setting--display--flex setting--flex-align--center{{ headerAbsolute ? ' header--absolute' }} {{ headerInvert ? ' header--invert' }}">
+		<div class="header--logo">
+			{% set logoUrl = theme %}
+			{% if logoUrl == "credo" %}{% set logoUrl = "" %}{% endif %}
+
+			<a href="/{{ logoUrl }}{{ currentLang == "en" ? "en" }}"><img src="/assets/build/svg/{{ theme }}{{ headerInvert ? '--white' }}.svg" class="header--logo-small" alt="Credo"></a>
+			{% if theme == 'finnes' %}
+				<a href="/finnes"><img src="/assets/build/svg/finnes_kafe{{ headerInvert ? '--white' }}.svg" class="header--logo-large" alt="Credo"></a>
+			{% elseif theme == 'jossa' %}
+				<a href="/jossa"><img src="/assets/build/svg/jossa_mat{{ headerInvert ? '--white' }}.svg" class="header--logo-large" alt="Credo"></a>
+			{% else %}
+				<a href="/{{ currentLang == "en" ? "en" }}"><img src="/assets/build/svg/credo_restaurant{{ headerInvert ? '--white' }}.svg" class="header--logo-large" alt="Credo"></a>
+			{% endif %}
+		</div>
+		<div class="header--links setting--display--flex setting--flex-align--center">
+			{% if theme != 'finnes' and theme != 'jossa' %}
+			<!--<div class="setting--margin-left--1em"><a href="#" class="setting--color--grey">English</a></div>-->
+			
+				{% set lang = "" %}
+				{% set langLink = "" %}
+
+				{% set otherLocales = craft.i18n.getSiteLocaleIds()|without(craft.locale) %}
+				{% for locale in otherLocales %}
+
+					{% set localeEntry = craft.entries.id(entry.id).locale(locale).first %}
+					{% set lang = locale %}
+
+					{% if localeEntry.locale == locale %}
+						{% set langLink = localeEntry.getUrl() %}
+					{% else %}
+						{% set langLink = craft.config.siteUrl[locale] %}
+					{% endif %}
+
+				{% endfor %}
+				
+				<div class="typography--small setting--margin-left--1em">
+					<a href="{{ langLink }}"><img src="/assets/build/svg/{{ lang }}.svg"> <span class="{{ headerInvert ? : "setting--color--black" }}">{{ lang|upper }}</span></a>
+				</div>
+
+			{% endif %}
+
+			<div class="setting--display--flex-sm">
+				{% if theme != 'credo' %}<div class="typography setting--margin-left--1em"><a href="/restaurant"><img src="/assets/build/svg/credo{{ headerInvert ? '--white' }}.svg"></a></div>{% endif %}
+				{% if theme != 'finnes' %}<div class="typography setting--margin-left--1em"><a href="/finnes"><img src="/assets/build/svg/finnes{{ headerInvert ? '--white' }}.svg"></a></div>{% endif %}
+				{% if theme != 'jossa' %}<div class="typography setting--margin-left--1em"><a href="/jossa"><img src="/assets/build/svg/jossa{{ headerInvert ? '--white' }}.svg"></a></div>{% endif %}
+			</div>
+
+		</div>
+		<div class="header--menu typography setting--margin-left--1em">
+					 <!--<div class="header--menu-text setting--padding-right--xs">
+				<div class="header--menu-text-menu setting--display--block">MENY</div>
+				<div class="header--menu-text-close setting--display--block">LUKK</div>
+					 </div>-->
+					 <div class="hamburger"><span></span></div>
+		</div>
+	</header>
+		<div class="setting--pos-relative">
+			<div class="sidemenu{{ headerInvert ? ' sidemenu--invert' }}">
+				<div class="setting--align-right setting--white-space--nowrap setting--margin-bottom--xl">
+					<ul class="heading--large">
+						<li><a href="{{ theme == 'finnes' or theme == 'jossa' ? theme : '/' }}">{{ currentLang == "en" ? "Frontpage" : "Forside" }}</a></li>
+						{% set navEntryTheme = theme %}
+						{% if navEntryTheme == 'credo' %}{% set navEntryTheme = 'restaurant' %}{% endif %}
+						{% for navEntry in craft.entries.section('sider').depth(1) %}
+							{% if navEntry.slug == navEntryTheme %}
+								{% set navChildren = navEntry.children() %}
+								{% for navItem in navChildren %}
+									<li><a href="{{ navItem.url }}">{{ navItem.title }}</a></li>
+								{% endfor %}
+							{% endif %}
+						{% endfor %}
+
+					</ul>
+					<ul class="typography setting--color--grey">
+							<!--Finnes: Åpningstider-->
+							<!-- <li><a href="#">Kontakt</a></li>
+							<li><a href="#">Presse</a></li>
+							<li><a href="#">Nyhetsbrev</a></li> -->
+					</ul>
+				</div>
+		</div>
+	</div>
+	<div class="sidemenu--overlay"></div>
+		{% if theme is empty %}
+			{% set theme = "credo" %}
+		{% endif %}
+		{% set overlayHours = attribute(infobox, "customHours" ~ theme|capitalize) %}
+		{% set overlayBookUrl = attribute(infobox.customBookingUrls[0], theme) %}
+		{% set overlayGiftUrl = attribute(infobox.customGiftUrls[0], theme) %}
+
+		{% if currentLang == "en" %}
+			{% set closedText = "Closed" %}
+		{% else %}
+			{% set closedText = "Stengt" %}
+		{% endif %}
+		
+		<div class="booking container setting--padding-bottom">
+			<div class="overlay-info-box" style="background-color: white; min-width: 30rem;">
+				<div class="overlay-hours-box setting--padding-top--small setting--padding-right setting--padding-bottom--small setting--padding-left">
+					<div class="overlay-hours-box-collapse setting--overflow-hidden">
+						<table class="typography setting--width--100-percent">
+							<tr>
+								<td class="setting--padding-right--xs setting--padding-bottom--xs">{{ currentLang == "en" ? "Monday" : "Mandag" }}</td>
+								<td class="setting--padding-left--small setting--padding-bottom--xs">
+									{{ overlayHours[0].mon|length < 2 ? closedText : overlayHours[0].mon ~ "-" ~ overlayHours[1].mon }}{{ overlayHours[2].mon|length < 2 ? "" : ", " ~ overlayHours[2].mon ~ "-" ~ overlayHours[3].mon }}
+								</td>
+							</tr>
+							<tr>
+								<td class="setting--padding-right--xs setting--padding-bottom--xs">{{ currentLang == "en" ? "Tuesday" : "Tirsdag" }}</td>
+								<td class="setting--padding-left--small setting--padding-bottom--xs">
+									{{ overlayHours[0].tue|length < 2 ? closedText : overlayHours[0].tue ~ "-" ~ overlayHours[1].tue }}{{ overlayHours[2].tue|length < 2 ? "" : ", " ~ overlayHours[2].tue ~ "-" ~ overlayHours[3].tue }}
+								</td>
+							</tr>
+							<tr>
+								<td class="setting--padding-right--xs setting--padding-bottom--xs">{{ currentLang == "en" ? "Wednesdey" : "Onsdag" }}</td>
+								<td class="setting--padding-left--small setting--padding-bottom--xs">
+									{{ overlayHours[0].wed|length < 2 ? closedText : overlayHours[0].wed ~ "-" ~ overlayHours[1].wed }}{{ overlayHours[2].wed|length < 2 ? "" : ", " ~ overlayHours[2].wed ~ "-" ~ overlayHours[3].wed }}
+								</td>
+							</tr>
+							<tr>
+								<td class="setting--padding-right--xs setting--padding-bottom--xs">{{ currentLang == "en" ? "Thursday" : "Torsdag" }}</td>
+								<td class="setting--padding-left--small setting--padding-bottom--xs">
+									{{ overlayHours[0].thur|length < 2 ? closedText : overlayHours[0].thur ~ "-" ~ overlayHours[1].thur }}{{ overlayHours[2].thur|length < 2 ? "" : ", " ~ overlayHours[2].thur ~ "-" ~ overlayHours[3].thur }}
+								</td>
+							</tr>
+							<tr>
+								<td class="setting--padding-right--xs setting--padding-bottom--xs">{{ currentLang == "en" ? "Friday" : "Fredag" }}</td>
+								<td class="setting--padding-left--small setting--padding-bottom--xs">
+									{{ overlayHours[0].fri|length < 2 ? closedText : overlayHours[0].fri ~ "-" ~ overlayHours[1].fri }}{{ overlayHours[2].fri|length < 2 ? "" : ", " ~ overlayHours[2].fri ~ "-" ~ overlayHours[3].fri }}
+								</td>
+							</tr>
+							<tr>
+								<td class="setting--padding-right--xs setting--padding-bottom--xs">{{ currentLang == "en" ? "Saturday" : "Lørdag" }}</td>
+								<td class="setting--padding-left--small setting--padding-bottom--xs">
+									{{ overlayHours[0].sat|length < 2 ? closedText : overlayHours[0].sat ~ "-" ~ overlayHours[1].sat }}{{ overlayHours[2].sat|length < 2 ? "" : ", " ~ overlayHours[2].sat ~ "-" ~ overlayHours[3].sat }}
+								</td>
+							</tr>
+							<tr>
+								<td class="setting--padding-right--xs setting--padding-bottom--xs setting--padding-bottom--small">{{ currentLang == "en" ? "Sunday" : "Søndag" }}</td>
+								<td class="setting--padding-left--small setting--padding-bottom--xs setting--padding-bottom--small">
+									{{ overlayHours[0].sun|length < 2 ? closedText : overlayHours[0].sun ~ "-" ~ overlayHours[1].sun }}{{ overlayHours[2].sun|length < 2 ? "" : ", " ~ overlayHours[2].sun ~ "-" ~ overlayHours[3].sun }}
+								</td>
+							</tr>
+						</table>
+					</div>
+
+					{% set overlayTodayOpen = attribute(overlayHours[0], "col" ~ "now"|date("N")) %}
+					{% set overlayTodayClose = attribute(overlayHours[1], "col" ~ "now"|date("N")) %}
+
+					{% set overlayTodayOpenAgain = attribute(overlayHours[2], "col" ~ "now"|date("N")) %}
+					{% set overlayTodayCloseAgain = attribute(overlayHours[3], "col" ~ "now"|date("N")) %}
+
+					<div class="typography setting--align-center">
+						{% if overlayTodayOpen|length < 2 %}
+						{% else %}
+							<span class="setting--display--inline-block setting--padding-right--small">
+								{{ currentLang == "en" ? "Open today from " : "Åpent idag fra" }}
+								<span style="white-space: nowrap">{{ overlayTodayOpen }}
+								{{ currentLang == "en" ? "until" : "til" }}
+								{{ overlayTodayClose }}</span>{% if overlayTodayOpenAgain > 2 %},<br>{{ currentLang == "en" ? "and from" : "og fra" }} <span style="white-space: nowrap">{{ overlayTodayOpenAgain }} til {{ overlayTodayCloseAgain }}</span>{% endif %}.
+							</span>
+						{% endif %}
+						<a href="#" class="overlay-hours-open setting--underline">{{ currentLang == "en" ? "Hours" : "Åpningstider" }}</a>
+					</div>
+				</div>
+				<div class="overlay-buttons-box setting--display--flex setting--align-center">
+					{% set overlayMenuEntry = attribute(infobox, "customMenuEntry" ~ theme|capitalize) %}
+					{% set overlayMenuButton = attribute(infobox.customMenuButton[0], theme) %}
+					{% set overlayButtonsEmpty = true %}
+					{% if overlayMenuButton == true and overlayMenuEntry|length %}
+						<a href="{{ overlayMenuEntry.first.getUrl }}" class="typography setting--display--block setting--flex-equal-size setting--padding--small">{{ currentLang == "en" ? "MENU" : "MENY" }}</a>
+						{% set overlayButtonsEmpty = false %}
+					{% endif %}
+					{% if overlayGiftUrl is not empty %}
+						<a href="{{ overlayGiftUrl }}" target="_blank" class="typography setting--display--block setting--flex-equal-size setting--padding--small">{{ currentLang == "en" ? "GIFTCARD" : "GAVEKORT" }}</a>
+						{% set overlayButtonsEmpty = false %}
+					{% endif %}
+					{% if overlayBookUrl is not empty %}
+						<a href="{{ overlayBookUrl }}" target="_blank" class="typography setting--display--block setting--flex-equal-size setting--padding--small">{{ currentLang == "en" ? "BOOK TABLE" : "BOOK BORD" }}</a>
+						{% set overlayButtonsEmpty = false %}
+					{% endif %}
+					{% if overlayButtonsEmpty == true %}
+						<div class="overlay-buttons-box-empty"></div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	<div class="content">

@@ -1,0 +1,75 @@
+{% set category = entry.categoryDepartment.first %}
+{% for journalEntry in craft.entries.section('journal').relatedTo(category) %}
+
+  {% set settingTextOverImage = journalEntry.settingTextOverImage %}
+
+  {% set journalTitle = journalEntry.title %}
+	{% set journalLeadText = journalEntry.standardLeadText %}
+  {% set journalUrl = journalEntry.url %}
+  {% set journalImage = journalEntry.standardImages.first.getUrl %}
+  {% set journalPostDate = journalEntry.postDate | date('F j') %}
+
+  {% set text %}
+  	{% if loop.index is even %}
+  		<div class="col-5_lg-11" data-push-right="off-1">
+  			<div class="setting--display--flex setting--flex-column setting--flex-space-between setting--height--100-percent setting--padding-top setting--padding-lg">
+					<div>
+  					<div class="heading--medium {{ settingTextOverImage ? ' setting--move-left-lg--xl' }}setting--pos-relative setting--z-index-top setting--margin-bottom">{{ journalTitle }}</div>
+						<div class="typography setting--margin-bottom">{{ journalLeadText }}</div>
+					</div>
+  				<div class="typography"><a href="{{ journalUrl }}" class="link">{{ currentLang == "en" ? "Read more" : "Les mer" }}</a></div>
+  			</div>
+  		</div>
+  	{% else %}
+  		<div class="col-5_lg-11 setting--order-lg--first" data-push-left="off-1">
+  			<div class="setting--display--flex setting--flex-column setting--flex-space-between setting--align-right setting--height--100-percent setting--padding-top setting--padding-lg">
+					<div>
+  					<div class="heading--medium {{ settingTextOverImage ? ' setting--move-right-lg--xl' }} setting--pos-relative setting--z-index-top setting--margin-bottom"><a href="{{ journalUrl }}">{{ journalTitle }}</a></div>
+						<div class="typography setting--margin-bottom">{{ journalLeadText }}</div>
+					</div>
+  				<div class="typography"><a href="{{ journalUrl }}" class="link">{{ currentLang == "en" ? "Read more" : "Les mer" }}</a></div>
+  			</div>
+  		</div>
+  	{% endif %}
+  {% endset %}
+
+  {% set image %}
+    {% if loop.index is even %}
+  		<div class="col-6_lg-12">
+  			<div class="setting--display--flex setting--height--100-percent">
+  				<div class="heading--small setting--rotate-left--large setting--bleed-left--large setting--z-index-top"><span>Credo Journal — {{ journalPostDate }}</span></div>
+  				<div class="setting--horizontal-box setting--pos-relative setting--overflow-hidden setting--image-absolute">
+            {% set transformedImages = craft.imager.transformImage(journalImage, [
+  			      { width: 1200 },
+  			      { width: 600 },
+  			      ], {  },
+  			      { fillTransforms: true }) %}
+  			      <a href="{{ journalUrl }}"><img src="{{ craft.imager.base64Pixel(16, 9) }}" class="lazyload--image lazyload" sizes="50vw" srcset="{{ craft.imager.srcset(transformedImages) }}"></a>
+  				</div>
+  			</div>
+  		</div>
+  	{% else %}
+  		<div class="col-6_lg-12 setting--order-lg--last">
+  			<div class="setting--display--flex setting--height--100-percent">
+  				<div class="setting--order--last heading--small setting--rotate-right--large setting--bleed-right--large setting--z-index-top"><span>Credo Journal — {{ journalPostDate }}</span></div>
+  				<div class="setting--order--first setting--horizontal-box setting--pos-relative setting--overflow-hidden setting--image-absolute">
+            {% set transformedImages = craft.imager.transformImage(journalImage, [
+  			      { width: 1200 },
+  			      { width: 600 },
+  			      ], {  },
+  			      { fillTransforms: true }) %}
+  			      <a href="{{ journalUrl }}"><img src="{{ craft.imager.base64Pixel(16, 9) }}" class="lazyload--image lazyload" sizes="50vw" srcset="{{ craft.imager.srcset(transformedImages) }}"></a>
+  				</div>
+  			</div>
+  		</div>
+  	{% endif %}
+  {% endset %}
+
+  <div class="container-{{ loop.index is odd ? 'right' : 'left' }} setting--gutter-bottom">
+  	<div class="grid-noGutter">
+  		{{ image }}
+  		{{ text }}
+  	</div>
+  </div>
+
+{% endfor %}

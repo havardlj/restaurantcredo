@@ -1,0 +1,68 @@
+{% set category = entry.categoryDepartment.first %}
+{% set theme = entry.categoryDepartment.first %}
+{% extends '_layouts/main-layout' %}
+
+{% block content %}
+
+  <div class="container">
+    <h1 class="heading--large italic setting--align-center setting--margin-bottom">{{ entry.title }}</h1>
+    <div class="setting--gutter-bottom">
+      <div class="grid-center-noGutter">
+    		<div class="col-12">
+    			<div class="setting--display--flex setting--height--100-percent">
+    				<div class="heading--small setting--rotate-left--large setting--bleed-left--large setting--z-index-top"><span>{{ category | capitalize }} Journal — {{ entry.postDate | date('F j') }}</span></div>
+            <div class="setting--horizontal-box setting--pos-relative setting--overflow-hidden setting--image-absolute">
+              {% if entry.standardImages.first %}
+              {% set transformedImages = craft.imager.transformImage(entry.standardImages.first, [
+    			      { width: 1200 },
+    			      { width: 600 },
+    			      ], {  },
+    			      { fillTransforms: true }) %}
+    			      <img src="{{ craft.imager.base64Pixel(16, 9) }}" class="lazyload--image lazyload" sizes="50vw" srcset="{{ craft.imager.srcset(transformedImages) }}">
+              {% endif %}
+      			</div>
+    			</div>
+    		</div>
+        <div class="col-8_md-12 setting--align-center">
+          <div class="heading--medium js--in-view">
+            {{ entry.standardLeadText }}
+          </div>
+        </div>
+    	</div>
+    </div>
+    {% for module in entry.standardContent %}
+      {% include '_modules/' ~ module.type.handle %}
+    {% endfor %}
+    <!--<div class="grid">
+      <div class="col-12">
+  			<div class="setting--display--flex setting--flex-space-between heading--medium">
+  				<div><a href="#" class="link">Forrige</a></div>
+  				<div><a href="#" class="link">Neste</a></div>
+  			</div>
+  		</div>
+    </div>-->
+    <div>
+      <div class="heading--medium setting--align-center setting--margin-bottom--large js--in-view--opacity">{{ currentLang == "en" ? "Other articles" : "Andre artikler" }}</div>
+    </div>
+    <div class="grid-center js--in-view--opacity">
+      {% for relatedEntry in craft.entries.section('journal').id('not ' ~ entry.id).relatedTo(category) %}
+  		<div class="col-3_lg-6_md-12">
+  			<div class="setting--horizontal-box setting--pos-relative setting--overflow-hidden setting--margin-bottom">
+          {% set transform = { width: 600} %}
+          {% if relatedEntry.standardImages.first %}<img src="{{ relatedEntry.standardImages.first.getUrl(transform) }}"  class="setting--image-absolute-center" alt="">{% endif %}
+          {% if relatedEntry.standardImages.first %}{% set transformedImages = craft.imager.transformImage(relatedEntry.standardImages.first, [
+  					{ width: 600 },
+  					], {  },
+  					{ fillTransforms: true }) %}
+  					<a href="{{ relatedEntry.url }}" class="link"><img src="{{ craft.imager.base64Pixel(16, 9) }}" sizes="30vw" srcset="{{ craft.imager.srcset(transformedImages) }}" class="setting--image-absolute-center" alt=""></a>{% endif %}
+  			</div>
+  			<div class="typography setting--margin-bottom--small">
+  				<p>{{ relatedEntry.title }}</p>
+  			</div>
+  			<div class="typography"><a href="{{ relatedEntry.url }}" class="link">{{ currentLang == "en" ? "Read more" : "Les mer" }}</a></div>
+  		</div>
+      {% endfor %}
+  	</div>
+  </div>
+
+{% endblock %}

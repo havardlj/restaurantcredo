@@ -1,0 +1,63 @@
+/* — — — SITE SPECIFIC — — — */
+
+
+
+/* — — — SPEED — — — */
+
+$speed: .3s;
+$speed-fast: $speed/2;
+
+/* — — — COLORS — — — */
+
+$color--white: #fff;
+$color--light-grey: #f8f8fa;
+$color--grey: #bbb;
+$color--black: #222;
+$color--orange: #ff6033;
+
+$color--primary: $color--black;
+$color--secondary: $color--grey;
+
+$color--background: #fff;
+
+
+/* — — — TYPOGRAPHY — — — */
+
+// Typography related variables can be found in typography.scss
+
+/* — — — GRID — — — */
+
+$gl-gutter: 2rem !default;
+
+
+/* — — — MARGINS — — — */
+
+$margin: $gl-gutter;
+$margin--lg: $margin*2;
+$margin--sm: $margin/2;
+
+
+
+/* — — — WIDTHS — — — */
+
+$width--xs: 20em; // 480
+$width--sm: 30em; // 480
+$width--md: 44em; // 640
+$width--lg: 60em; // 960
+$width--xl: 75em; // 1200
+$width--xxl: 100em; // 1600
+
+$width--container: $width--lg;
+$width--container-small: $width--md;
+$width--container-large: $width--xl;
+
+/* — — — BREAKPOINT MAP — — — */
+
+$breakpoints: (
+  xs: $width--xs,
+  sm: $width--sm,
+  md: $width--md,
+  lg: $width--lg,
+  xl: $width--xl,
+  xxl: $width--xxl
+);

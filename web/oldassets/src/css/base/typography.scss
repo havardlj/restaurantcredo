@@ -1,0 +1,61 @@
+/* — — — VARIABLES — — — */
+
+@import url('https://fonts.googleapis.com/css?family=Trocchi');
+
+$font-family--sans-serif: "futura-pt", Helvetica, sans-serif;
+$font-family--serif: 'Trocchi','park-lane', Garamond, Times, 'Times New Roman', serif;
+$font-family--standard: $font-family--sans-serif;
+
+
+/* — — — FONT SIZE MAPS — — — */
+
+$fs--p: (
+  null: (1em, 1.45),
+  md: (1.3em)
+);
+
+$fs--p--small: (
+  null: (0.9em, 1.45),
+  md: (1.1em)
+);
+
+/* — — — STYLES — — — */
+
+p {
+  @include font-size($fs--p);
+}
+
+.typography--small {
+  p {
+    @include font-size($fs--p--small);
+
+  }
+}
+
+.heading {
+  font-size: 3em;
+  @include width-md {
+    font-size: 6em;
+  }
+  font-family: $font-family--serif;
+}
+
+.heading--small {
+  font-size: 1.5em;
+  margin-bottom: 0.3em;
+  @include width-md {
+    font-size: 3em;
+  }
+}
+
+
+.typography--credits {
+  margin-top: 4em;
+  color: #aaa;
+  text-align: right;
+  p {
+    font-size: 85%;
+    padding-bottom: 2em;
+
+  }
+}

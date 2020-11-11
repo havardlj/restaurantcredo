@@ -1,0 +1,85 @@
+body, html {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+body {
+
+   font-size: 16px;
+   color: $color--text;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   a {
+      color: $color--text;
+      transition: color $speed;
+      &:hover {
+         color: $color--black;
+      }
+   }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+@mixin container-right {
+  padding-right: $gl-gutter;
+
+}
+
+@mixin container-left {
+  padding-left: $gl-gutter;
+
+
+}
+
+.container-right { @include container-right; }
+.container-left { @include container-left; }
+
+.container {
+   @include container-right;
+   @include container-left;
+}
+.sidemenu, .header, .footer {
+   padding: $gl-gutter $gl-gutter 0;
+   @include width-sm {
+      @include container-right;
+      @include container-left;
+   }
+}
+
+@mixin container-max {
+   max-width: $container-max;
+   margin: 0 auto;
+}
+
+.container, .container-left, .container-right {
+   @include container-max;
+}
+
+.container--large {
+  @include width-md {
+    max-width: 95em;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+}
+
+
+.header, .footer {
+  //  margin-top: $margin--sm;
+  //  margin-bottom: $margin--sm;
+   @include width-md {
+      padding-top: $margin;
+      padding-bottom: $margin;
+   }
+}
+
+
+
+.box {
+  background: tomato;
+  border: 30px solid white;
+}

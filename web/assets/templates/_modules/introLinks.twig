@@ -1,0 +1,13 @@
+<div class="setting--gutter-bottom">
+  <div class="grid-center-noGutter">
+    {% if module.standardHeading %}<div class="col-12">
+      <div class="setting--align-center typography setting--margin-bottom">{{ module.standardHeading }}</div>
+    </div>{% endif %}
+    <div class="col-10_xl-12">
+      <ul class="nav--intro setting--align-center heading--medium">
+        {% for link in module.customIntroLinks %}<li><a href="{{ link.externalLink | length ? link.externalLink : link.internLink.first.getUrl() }}" class="link">{{ link.navn }}</a></li>{% endfor %}
+
+      </ul>
+    </div>
+  </div>
+</div>

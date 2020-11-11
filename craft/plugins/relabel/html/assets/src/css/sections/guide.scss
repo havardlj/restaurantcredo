@@ -1,0 +1,15 @@
+.guide--color-circle {
+   display: inline-block;
+   width: $margin--lg;
+   height: $margin--lg;
+   margin-right: $margin--sm;
+   margin-top: $margin--xs;
+   border-radius: 50%;
+}
+
+.guide--description {
+   display: none;
+   @include width-lg {
+      display: block;
+   }
+}

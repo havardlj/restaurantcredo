@@ -1,0 +1,65 @@
+{# <div class="container setting--gutter-bottom">
+	<div class="grid-noGutter">
+		<div class="col-6_lg-12">
+			{% if module.standardImages | length %}<div class="setting--bleed-left--xxl setting--bleed-right">
+				{% set transformedImages = craft.imager.transformImage(module.standardImages[0], [
+		      { width: 1200 },
+		      { width: 600 },
+		      ], {  },
+		      { fillTransforms: true }) %}
+		      <img src="{{ craft.imager.base64Pixel(16, 9) }}" class="lazyload--image lazyload" sizes="50vw" srcset="{{ craft.imager.srcset(transformedImages) }}">
+
+			</div>{% endif %}
+		</div>
+		<div class="col-6_lg-12">
+			<div class="heading--large italic setting--bleed-left-lg--xxl setting--margin-top setting--margin-bottom">{{ module.standardHeading }}</div>
+			<div class="typography setting--move-left-lg--small setting--margin-bottom">
+				{{ module.standardBodyText }}
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="setting--display--flex-sm">
+				<div class="hours typography setting--pos-relative">
+					<div class="hours--popup setting--pos-absolute">
+						<div class="hours--popup--box setting--pos-absolute setting--display--none setting--fill--light-grey setting--padding">
+							<div class="hours--popup--box-close setting--pos-absolute"></div>
+							<table>
+								<tbody><tr>
+									<td>Mandag:</td><td class="hours--day-1">Stengt</td>
+								</tr>
+								<tr>
+									<td>Tirsdag:</td><td class="hours--day-2">Stengt</td>
+								</tr>
+								<tr>
+									<td>Onsdag:</td><td class="hours--day-3">10:00 - 20:00</td>
+								</tr>
+								<tr>
+									<td>Torsdag:</td><td class="hours--day-4">10:00 - 20:00</td>
+								</tr>
+								<tr>
+									<td>Fredag:</td><td class="hours--day-5">10:00 - 20:00</td>
+								</tr>
+								<tr>
+									<td>Lørdag:</td><td class="hours--day-6">10:00 - 20:00</td>
+								</tr>
+								<tr>
+									<td>Søndag:</td><td class="hours--day-7">10:00 - 20:00</td>
+								</tr>
+							</tbody></table>
+						</div>
+					</div>
+					<span class="hours--closed setting--display--none">Finnes kafè er stengt idag -</span>
+					<span class="hours--open setting--display--none" style="display: inline;">Vi er åpen idag <br>fra</span>
+					<a href="#" class="link hours--link">
+						<span class="hours--closed setting--display--none">Åpningstider</span>
+						<span class="hours--today">10:00 - 20:00</span>
+					</a>
+				</div>
+				<div class="setting--margin-left--auto setting--align-right">
+					<div class="typography">Se vår <a href="#" class="link">meny</a></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div> #}

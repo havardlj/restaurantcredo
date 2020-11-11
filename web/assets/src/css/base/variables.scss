@@ -1,0 +1,71 @@
+/* — — — SPEED — — — */
+
+$speed: .3s;
+$speed-fast: $speed/2;
+
+/* — — — COLORS — — — */
+
+$color--white: #fff;
+$color--light-grey: #eee;
+$color--grey: #bbb;
+$color--dark-grey: #444;
+$color--black: #222;
+
+$color--primary: $color--dark-grey;
+$color--secondary: $color--dark-grey;
+
+$color--blue: blue;
+$color--light-blue: #4169E1;
+
+$color--background: #fff;
+$color--border: #eee;
+$color--headings: $color--dark-grey;
+$color--text: $color--dark-grey;
+$color--links: $color--dark-grey;
+
+
+/* — — — TYPOGRAPHY — — — */
+
+// Typography related variables can be found in typography.scss
+
+/* — — — GRID — — — */
+$gl-gutter: 2rem !default;
+$gl-gutter-vertical: 8rem;
+
+
+/* — — — MARGINS — — — */
+
+$margin: $gl-gutter;
+$margin--xs: $margin/4;
+$margin--sm: $margin/2;
+$margin--lg: $margin*2;
+$margin--xl: $margin*4;
+$margin--xxl: $margin*6;
+
+
+
+/* — — — WIDTHS — — — */
+
+$width--xs: 20em; // 480
+$width--sm: 30em; // 480
+$width--md: 40em; // 640
+$width--lg: 60em; // 960
+$width--xl: 75em; // 1200
+$width--xxl: 100em; // 1600
+
+$container-max: $width--xl;
+
+$width--container: $width--lg;
+$width--container-small: $width--md;
+$width--container-large: $width--xl;
+
+/* — — — BREAKPOINT MAP — — — */
+
+$breakpoints: (
+  xs: $width--xs,
+  sm: $width--sm,
+  md: $width--md,
+  lg: $width--lg,
+  xl: $width--xl,
+  xxl: $width--xxl
+);

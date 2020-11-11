@@ -1,0 +1,29 @@
+{% set text %}
+<div class="col-6_lg-12">
+  <div class="typography setting--margin-bottom*{{ module.settingAlignCenter == true ? " setting--align-center" }}">
+    {{ module.standardBodyText }}
+  </div>
+</div>
+{% endset %}
+{% set image %}
+<div class="col-6_lg-12">
+  <div class="setting--pos-relative setting--overflow-hidden">
+    {% set transformedImages = craft.imager.transformImage(module.standardImages[0], [
+      { width: 1200 },
+      { width: 600 },
+      ], {  },
+      { fillTransforms: true }) %}
+      <img src="{{ craft.imager.base64Pixel(16, 9) }}" class="lazyload--image lazyload" sizes="50vw" srcset="{{ craft.imager.srcset(transformedImages) }}">
+  </div>
+</div>
+{% endset %}
+
+<div class="grid-middle js--in-view">
+  {% if module.settingImagePosition == 'right' %}
+    {{ text }}
+    {{ image }}
+  {% else %}
+    {{ image }}
+    {{ text }}
+  {% endif %}
+</div>

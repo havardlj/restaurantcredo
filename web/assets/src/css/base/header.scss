@@ -1,0 +1,173 @@
+$header-height-collapsed: 6rem;
+$header-height: 7rem;
+
+* {
+   //border: 1px dotted black;
+}
+
+.sidemenu {
+   position: absolute;
+   z-index: 98;
+   top: 0;
+   right: 0;
+   overflow-x: hidden;
+   transform: translateX(18em);
+   transition: transform $speed*2;
+   .body.js--menu & {
+      transform: translateX(0);
+   }
+   .body--invert & {
+     padding-top: 5em;
+   }
+   a {
+      display: block;
+   }
+}
+
+.body {
+   width: 100vw;
+   //padding-right: 1rem;
+}
+
+.body.js--menu {
+   .booking {
+      // right: 1rem;
+   }
+   .content {
+
+      //height: 100vh;
+
+      overflow: hidden;
+   }
+}
+
+.header {
+   position: relative;
+   z-index: 99;
+   background: $color--white;
+//   height:  $margin--lg; // $margin--sm + $margin--sm + $margin - update .body.js--menu .content height
+   @include width-md {
+//      height: $margin--lg*2; // $margin + $margin + $margin--lg - update .body.js--menu .content height
+   }
+}
+
+.header--logo {
+   margin-right: auto;
+}
+
+.header--logo-small, .header--logo-large {
+   height: $margin;
+   @include width-md {
+      height: $margin;
+   }
+   width: auto;
+}
+.header--logo-small {
+   display: block;
+}
+.header--logo-large {
+   display: none;
+}
+@include width-lg {
+   .header--logo-small {
+      display: none;
+   }
+   .header--logo-large {
+      display: block;
+   }
+}
+
+.header--links div {
+   font-size: .75em;
+   @include width-sm {
+      font-size: 1em;
+   }
+   img {
+     height: .75rem;
+     width: auto;
+   }
+}
+
+.header--menu {
+   @include width-md {
+      position: static;
+   }
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   .hamburger span {
+      &,
+      &:before,
+      &:after {
+         background: $color--primary;
+      }
+      .body.js--menu & {
+         background: transparent;
+         &:before {
+            margin: 0;
+            transform: rotate(45deg);
+         }
+         &:after {
+            margin: 0;
+            transform: rotate(-45deg);
+         }
+      }
+   }
+}
+
+.header--menu-text {
+   height: 1em;
+   overflow: hidden;
+}
+
+.header--menu-text-menu,
+.header--menu-text-close {
+   line-height: 1em;
+}
+
+.sidemenu--overlay {
+   position: fixed;
+   z-index: 97;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: $color--white;
+   pointer-events: none;
+   background: rgba(255, 255, 255, 0);
+   transition: background $speed*2, filter $speed;
+   .body.js--menu & {
+      pointer-events: auto;
+      background: rgba(255, 255, 255, .85);
+   }
+}
+
+.booking {
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   z-index: 99;
+}
+
+.header--absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: none;
+}
+
+.header--invert {
+  color: #fff;
+  a {
+    color: #fff;
+  }
+  .hamburger span {
+    &,
+    &:after,
+    &:before {
+      background: #fff;
+    }
+
+  }
+}

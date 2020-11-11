@@ -1,0 +1,151 @@
+/* — — — VARIABLES — — — */
+
+$font-family--sans-serif: "europa", sans-serif;
+$font-family--serif: "freight-text-pro", 'Times New Roman', serif;
+$font-family--standard: $font-family--sans-serif;
+
+
+/* — — — FONT SIZE MAPS — — — */
+
+$fs-typography: (
+  null  : (1em, 1.4), // update paragraph minus
+  md  : (1.15em, 1.6) // update paragraph minus
+);
+
+$fs-heading--small: (
+  null  : (1em, 1.33),
+  md  : (1.25em, 1.33)
+);
+
+$fs-heading--medium: (
+  null  : (1.8em, 1.15),
+  md  : (2.5em, 1.15)
+);
+
+$fs-heading--serif--large: (
+  null  : (3.2em, 1.1),
+  md  : (4.625em, 1.1)
+);
+
+$fs-heading--sans-serif--large: (
+  null  : (3.2em, 1.25),
+  md  : (4em, 1.25)
+);
+
+/* — — — STYLES — — — */
+
+.typography {
+   font-family: $font-family--sans-serif;
+   font-weight: 300;
+   font-style: normal;
+   @include font-size($fs-typography);
+   p:first-of-type {
+      margin-top: -.2em;
+   }
+}
+
+.heading--small, .heading--medium {
+   font-family: $font-family--serif;
+   font-weight: 400;
+   font-style: normal;
+}
+
+.heading--small {
+   @include font-size($fs-heading--small);
+}
+
+.heading--medium {
+   @include font-size($fs-heading--medium);
+}
+
+.heading--large, h1 {
+   font-family: $font-family--sans-serif;
+   font-weight: 300;
+   font-style: normal;
+   @include font-size($fs-heading--sans-serif--large);
+}
+.heading--large.italic,
+.heading--large i, h2 {
+   font-family: $font-family--serif;
+   font-weight: 300;
+   font-style: italic;
+   @include font-size($fs-heading--serif--large);
+}
+
+.link {
+   display: inline-block;
+   padding-bottom: .15em;
+   margin-bottom: .15em;
+   border-bottom: 1px solid transparent;
+   .body.credo & {
+      border-color: rgba(0, 0, 0, .5);
+      transition: border-color $speed;
+      &:hover {
+         border-color: rgba(0, 0, 0, 1);
+      }
+   }
+   .body.finnes & {
+      border-color: $color--blue;
+      transition: border-color $speed;
+      &:hover {
+         border-color: $color--black;
+      }
+   }
+   .body.jossa & {
+      border-color: $color--grey;
+      &:hover {
+         border-color: $color--light-grey;
+      }
+   }
+   white-space: nowrap;
+}
+
+p:not(first-of-type) {
+   margin-top: 1em;
+}
+
+.wysiwyg {
+
+  a {
+    border-bottom: 1px solid #aaa;
+  }
+
+  li {
+    @extend p;
+
+    margin-bottom: 0.25em;
+    &:last-child {
+      margin-bottom: 0.75em;
+    }
+
+    margin-left: 1em;
+
+    position: relative;
+    padding-left: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      text-align: center;
+      left: -0.6em;
+      width: 4px;
+      height: 4px;
+      background: $color--black;
+      border-radius: 99em;
+      top: 0.45em;
+    }
+  }
+
+  ol {
+    counter-reset: ol-counter;
+    li {
+      &:before {
+        color: $color--grey;
+        content: counter(ol-counter);
+  	    counter-increment: ol-counter;
+      }
+    }
+  }
+
+}

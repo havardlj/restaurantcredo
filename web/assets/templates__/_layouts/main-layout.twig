@@ -1,0 +1,37 @@
+{% if headerInvert is defined and headerInvert %}{% set headerInvert = true %}{% else %}{% set headerInvert = false %}{% endif %}
+{% if headerAbsolute is defined and headerAbsolute %}{% set headerAbsolute = true %}{% else %}{% set headerAbsolute = false %}{% endif %}
+{% set segment = craft.request.getFirstSegment %}
+{% switch segment %}
+	{% case 'restaurant' %}
+		{% set theme = 'credo' %}
+	{% case 'journal' %}
+		{% set theme = entry.categoryDepartment.first | lower %}
+	{% case '' %}
+		{% set theme = 'credo' %}
+	{% default %}
+		{% set theme = segment %}
+{% endswitch %}
+
+<!doctype html>
+<html class="no-js" lang="{{ craft.locale }}">
+
+<head>
+	{% include '_includes/html-head' %}
+</head>
+<body class="body {{ theme }}{% if bodyClass is defined %} {{ bodyClass }}{% endif %}{{ headerInvert ? ' body--invert' }}">
+
+	{% include '_includes/site-header' %}
+
+  <main role="main" class="mainContent">
+
+    {% block content %}
+
+
+		{% endblock %}
+
+  </main>
+
+  {% include '_includes/site-footer' %}
+
+</body>
+</html>

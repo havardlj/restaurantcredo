@@ -1,0 +1,16 @@
+{% set entry = craft.entries.id(7).first() %}
+{% if entry.settingHeaderInvert is defined and entry.settingHeaderInvert %}{% set headerInvert = true %}{% endif %}
+{% if entry.settingHeaderAbsolute is defined and entry.settingHeaderAbsolute %}{% set headerAbsolute = true %}{% endif %}
+{% extends '_layouts/main-layout' %}
+
+{% block content %}
+
+
+<div class="container">
+
+  {% for module in entry.standardContent %}
+    {% include '_modules/' ~ module.type.handle %}
+  {% endfor %}
+</div>
+
+{% endblock %}

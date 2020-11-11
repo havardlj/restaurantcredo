@@ -1,0 +1,68 @@
+$hamburger-width: 30px;
+$hamburger-height: 21px;
+$hamburger-line: 1px;
+$hamburger-space: ($hamburger-height - ($hamburger-line*3))/2;
+
+.hamburger {
+   position: relative;
+   pointer-events: none;
+   width: $hamburger-width;
+   height: $hamburger-height;
+   span {
+      &,
+      &:before,
+      &:after {
+         content: "";
+         width: 100%;
+         height: $hamburger-line;
+         background: $color--text;
+         display: block;
+         position: absolute;
+         transition: background $speed, margin $speed, transform $speed;
+      }
+      & {
+         margin-top: $hamburger-space + $hamburger-line;
+      }
+      &:before {
+         margin-top: -$hamburger-space;
+      }
+      &:after {
+         margin-top: $hamburger-space;
+      }
+   }
+}
+
+.button {
+   display: inline-block;
+   padding: .5em 1em;
+   white-space: nowrap;
+   .body.credo & {
+      color: $color--white;
+      background: $color--black;
+      transition: background $speed;
+      &:hover {
+         color: $color--white !important;
+         background: $color--dark-grey;
+      }
+   }
+   .body.finnes & {
+      color: $color--white;
+      background: $color--blue;
+      transition: background $speed;
+      &:hover {
+         color: $color--white !important;
+         background: $color--black;
+      }
+   }
+   .body.jossa & {
+      font-weight: 600;
+      color: $color--black;
+      background: $color--white;
+      transition: background $speed, color $speed;
+      border: 2px solid $color--black;
+      &:hover {
+         color: $color--white;
+         background: $color--black;
+      }
+   }
+}

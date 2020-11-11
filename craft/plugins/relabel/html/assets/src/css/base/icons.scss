@@ -1,0 +1,141 @@
+.icon--circle {
+   // use setting--pos-...
+   &:after {
+      content: "";
+      z-index: -1;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1.75em;
+      height: 1.75em;
+      border-radius: 50%;
+   }
+}
+
+.button--square {
+   display: inline-block;
+   padding: .5em 1.25em;
+   font-family: $font-family--heading--primary;
+}
+
+.button--circle-arrow--small,
+.button--circle-arrow,
+.button--circle-arrow-left--small,
+.button--circle-arrow-left,
+.button--circle-arrow--large,
+.button--circle-arrow-left--large {
+   display: inline-block;
+   border-radius: 50%;
+   cursor: pointer;
+   position: relative;
+}
+
+.button--circle-arrow--small,
+.button--circle-arrow,
+.button--circle-arrow-left--small,
+.button--circle-arrow-left,
+.button--circle-arrow--large,
+.button--circle-arrow-left--large {
+   &:before {
+      content: "";
+      display: block;
+      height: 33%;
+      width: 33%;
+      position: absolute;
+      border-left: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+   }
+}
+
+.button--circle-arrow--small,
+.button--circle-arrow,
+.button--circle-arrow--large {
+   &:before {
+      top: 50%;
+      left: 45%;
+      transform: translate(-55%, -50%) rotate(-135deg);
+   }
+}
+
+.button--circle-arrow-left--small,
+.button--circle-arrow-left,
+.button--circle-arrow-left--large {
+   &:before {
+      top: 50%;
+      left: 55%;
+      transform: translate(-45%, -50%) rotate(45deg);
+   }
+}
+
+.button--circle-arrow--small,
+.button--circle-arrow-left-small {
+   width: $margin;
+   height: $margin;
+}
+
+.button--circle-arrow,
+.button--circle-arrow-left {
+   width: $margin;
+   height: $margin;
+   @include width-lg {
+      width: $margin--lg;
+      height: $margin--lg;
+   }
+}
+
+.button--circle-arrow--large,
+.button--circle-arrow-left--large {
+   width: $margin--lg;
+   height: $margin--lg;
+}
+
+.icon--color--primary {
+   color: $color--white;
+   &:before, &:after {
+      background: $color--primary;
+   }
+}
+
+.button--color--primary {
+   &, a {
+      color: $color--white !important;
+   }
+   background: $color--primary;
+   &:before {
+      border-color: $color--white;
+   }
+   transition: background $speed;
+   &:hover {
+      background: $color--secondary;
+   }
+}
+
+.button--color--secondary {
+   &, a {
+      color: $color--black!important;
+   }
+   background: $color--secondary;
+   &:before {
+      border-color: $color--black;
+   }
+   transition: background $speed;
+   &:hover {
+      background: $color--grey;
+   }
+}
+
+.button--color--black {
+   &, a {
+      color: $color--white!important;
+   }
+   background: $color--black;
+   &:before {
+      border-color: $color--white;
+   }
+   transition: background $speed;
+   &:hover {
+      background: $color--primary;
+   }
+}

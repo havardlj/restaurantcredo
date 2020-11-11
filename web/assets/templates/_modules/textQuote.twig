@@ -1,0 +1,27 @@
+{% set image = module.standardImages.first %}
+</div>
+<div class="container setting--gutter-bottom js--in-view">
+	<div class="grid-noGutter">
+		<div class="col-8_xl-10 setting--order-xl--last" data-push-left="off-0_xl-2">
+			{% if image | length %}
+				<div class="setting--horizontal-box setting--pos-relative setting--overflow-hidden setting--image-absolute setting--horisontal-gradient">
+					{% set transformedImages = craft.imager.transformImage(image, [
+			      { width: 1200 },
+			      { width: 600 },
+			      ], {  },
+			      { fillTransforms: true }) %}
+			      <img src="{{ craft.imager.base64Pixel(16, 9) }}" class="lazyload--image lazyload" sizes="50vw" srcset="{{ craft.imager.srcset(transformedImages) }}">
+				</div>
+			{% endif %}
+		</div>
+		<div class="col-4_xl-10 setting--order-xl--first" data-push-right="off-0_xl-2">
+			<div class="quote-box setting--z-index-top setting--pos-relative setting--padding-top-xl setting--padding-bottom-xl">
+				<div class="heading--large italic setting--margin-bottom">
+					{{ module.standardBodyText }}
+				</div>
+				<div class="typography">{{ module.standardSubHeading }}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">

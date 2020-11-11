@@ -1,0 +1,65 @@
+<footer class="footer setting--padding-bottom--xxl js--in-view--opacity">
+   <div class="setting--bleed-down-sm--large container">
+      <div class="grid-noGutter">
+        <div class="col-3_lg-6_md-12">
+          <ul class="typography setting--gutter-right setting--padding-bottom setting--bleed-down-lg">
+             {% if theme == 'finnes' %}
+               <li>Finnes Kafé</li>
+               <li>Ladeveien 9C</li>
+               <li class="setting--margin-bottom">7066 Trondheim</li>
+            {% elseif theme == 'jossa' %}
+              <li>Jossa Mat og Drikke</li>
+              <li>Ladeveien 9</li>
+              <li class="setting--margin-bottom">7066 Trondheim</li>
+            {% else %}
+              <li>Credo Restaurant</li>
+              <li>Ladeveien 9</li>
+              <li class="setting--margin-bottom">7066 Trondheim</li>
+            {% endif %}
+          </ul>
+        </div>
+        <div class="col-3_lg-6_md-12">
+          <ul class="typography setting--gutter-right setting--padding-bottom setting--bleed-down-lg">
+
+            <li>+47 954 37 028</li>
+            {% if theme == 'finnes' %}
+              {% set emailAddress = '' %}
+            {% elseif theme == 'jossa' %}
+              {% set emailAddress = 'brev@jossamatogdrikke.no' %}
+            {% else %}
+              {% set emailAddress = 'credo@restaurantcredo.no' %}
+            {% endif %}
+
+             {% if emailAddress | length > 0 %}<li><a href="mailto:{{ emailAddress }}" class="link">{{ emailAddress }}</a></li>{% endif %}
+          </ul>
+        </div>
+        <div class="col-3_lg-6_md-12">
+          <ul class="typography setting--gutter-right setting--padding-bottom setting--bleed-down-lg">
+            {% if theme == 'finnes' %}
+              {% set facebookUrl = 'https://www.facebook.com/Finnes-Kafé-700391543494829/' %}
+              {% set instagramUrl = 'https://www.instagram.com/finneskafe/' %}
+            {% elseif theme == 'jossa' %}
+              {% set facebookUrl = 'https://www.facebook.com/jossamatogdrikke.no/' %}
+              {% set instagramUrl = 'https://www.instagram.com/jossamatogdrikke/' %}
+            {% else %}
+              {% set facebookUrl = 'https://www.facebook.com/restaurantcredo.no/' %}
+              {% set instagramUrl = 'https://www.instagram.com/restaurantcredo/' %}
+            {% endif %}
+            <li><a href="{{ facebookUrl }}" target="_blank">Facebook</a></li>
+            <li><a href="{{ instagramUrl }}" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="col-3_lg-6_md-12">
+          <div class="typography">
+             Design og kode av <a href="http://www.skogen.io" target="_blank" class="link">Skogen</a>
+          </div>
+        </div>
+
+      </div>
+   </div>
+</footer>
+</div>
+</div>
+{% include '_includes/js-includes' %}
+</body>
+</html>

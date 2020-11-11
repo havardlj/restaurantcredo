@@ -1,0 +1,3425 @@
+/* — — — ALIGNS — — — */
+
+.setting--align-left {
+  text-align: left;
+}
+
+.setting--align-center {
+  text-align: center;
+}
+
+.setting--align-right {
+  text-align: right;
+}
+
+.setting--vertical-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.setting--inline-middle {
+   display: inline-block;
+   vertical-align: middle;
+}
+
+/* — — — MARGIN/PADDING/ABSOLUTES — — — */
+
+.setting--margin-top--auto {
+   margin-top: auto;
+}
+
+.setting--margin-right--auto {
+   margin-left: auto;
+}
+
+.setting--margin-bottom--auto {
+   margin-top: auto;
+}
+
+.setting--margin-left--auto {
+   margin-left: auto;
+}
+
+@mixin margin-top--xs {
+   margin-top: $margin--xs;
+}
+* {
+   .setting--margin-top--xs {
+      @include margin-top--xs;
+   }
+   .setting--margin-top-sm--xs {
+      @include width-sm { @include margin-top--xs }
+   }
+   .setting--margin-top-md--xs {
+      @include width-md { @include margin-top--xs }
+   }
+   .setting--margin-top-lg--xs {
+      @include width-lg { @include margin-top--xs }
+   }
+   .setting--margin-top-xl--xs {
+      @include width-xl { @include margin-top--xs }
+   }
+   .setting--margin-top-xxl--xs {
+      @include width-xxl { @include margin-top--xs }
+   }
+}
+
+@mixin margin-top--small {
+   margin-top: $margin--sm;
+}
+* {
+   .setting--margin-top--small {
+      @include margin-top--small;
+   }
+   .setting--margin-top-sm--small {
+      @include width-sm { @include margin-top--small }
+   }
+   .setting--margin-top-md--small {
+      @include width-md { @include margin-top--small }
+   }
+   .setting--margin-top-lg--small {
+      @include width-lg { @include margin-top--small }
+   }
+   .setting--margin-top-xl--small {
+      @include width-xl { @include margin-top--small }
+   }
+   .setting--margin-top-xxl--small {
+      @include width-xxl { @include margin-top--small }
+   }
+}
+
+@mixin margin-top {
+   margin-top: $margin;
+}
+* {
+   .setting--margin-top {
+      @include margin-top;
+   }
+   .setting--margin-top-sm {
+      @include width-sm { @include margin-top }
+   }
+   .setting--margin-top-md {
+      @include width-md { @include margin-top }
+   }
+   .setting--margin-top-lg {
+      @include width-lg { @include margin-top }
+   }
+   .setting--margin-top-xl {
+      @include width-xl { @include margin-top }
+   }
+   .setting--margin-top-xxl {
+      @include width-xxl { @include margin-top }
+   }
+}
+
+@mixin margin-top--large {
+  margin-top: $margin;
+  @include width-md {
+    margin-top: $margin--lg;
+  }
+
+}
+* {
+   .setting--margin-top--large {
+      @include margin-top--large;
+   }
+   .setting--margin-top-sm--large {
+      @include width-sm { @include margin-top--large }
+   }
+   .setting--margin-top-md--large {
+      @include width-md { @include margin-top--large }
+   }
+   .setting--margin-top-lg--large {
+      @include width-lg { @include margin-top--large }
+   }
+   .setting--margin-top-xl--large {
+      @include width-xl { @include margin-top--large }
+   }
+   .setting--margin-top-xxl--large {
+      @include width-xxl { @include margin-top--large }
+   }
+}
+
+@mixin margin-top--xl {
+   margin-top: $margin--xl;
+}
+* {
+   .setting--margin-top--xl {
+      @include margin-top--xl;
+   }
+   .setting--margin-top-sm--xl {
+      @include width-sm { @include margin-top--xl }
+   }
+   .setting--margin-top-md--xl {
+      @include width-md { @include margin-top--xl }
+   }
+   .setting--margin-top-lg--xl {
+      @include width-lg { @include margin-top--xl }
+   }
+   .setting--margin-top-xl--xl {
+      @include width-xl { @include margin-top--xl }
+   }
+   .setting--margin-top-xxl--xl {
+      @include width-xxl { @include margin-top--xl }
+   }
+}
+
+@mixin margin-top--xxl {
+   margin-top: $margin--xxl;
+}
+* {
+   .setting--margin-top--xxl {
+      @include margin-top--xxl;
+   }
+   .setting--margin-top-sm--xxl {
+      @include width-sm { @include margin-top--xxl }
+   }
+   .setting--margin-top-md--xxl {
+      @include width-md { @include margin-top--xxl }
+   }
+   .setting--margin-top-lg--xxl {
+      @include width-lg { @include margin-top--xxl }
+   }
+   .setting--margin-top-xl--xxl {
+      @include width-xl { @include margin-top--xxl }
+   }
+   .setting--margin-top-xxl--xxl {
+      @include width-xxl { @include margin-top--xxl }
+   }
+}
+
+@mixin margin-right--1em {
+   margin-right: 1em;
+}
+* {
+   .setting--margin-right--1em {
+      @include margin-right--1em;
+   }
+   .setting--margin-right-sm--1em {
+      @include width-sm { @include margin-right--1em }
+   }
+   .setting--margin-right-md--1em {
+      @include width-md { @include margin-right--1em }
+   }
+   .setting--margin-right-lg--1em {
+      @include width-lg { @include margin-right--1em }
+   }
+   .setting--margin-right-xl--1em {
+      @include width-xl { @include margin-right--1em }
+   }
+   .setting--margin-right-xxl--1em {
+      @include width-xxl { @include margin-right--1em }
+   }
+}
+
+@mixin margin-right--small {
+   margin-right: $margin--sm;
+}
+* {
+   .setting--margin-right--small {
+      @include margin-right--small;
+   }
+   .setting--margin-right-sm--small {
+      @include width-sm { @include margin-right--small }
+   }
+   .setting--margin-right-md--small {
+      @include width-md { @include margin-right--small }
+   }
+   .setting--margin-right-lg--small {
+      @include width-lg { @include margin-right--small }
+   }
+   .setting--margin-right-xl--small {
+      @include width-xl { @include margin-right--small }
+   }
+   .setting--margin-right-xxl--small {
+      @include width-xxl { @include margin-right--small }
+   }
+}
+
+@mixin margin-right {
+   margin-right: $margin;
+}
+* {
+   .setting--margin-right {
+      @include margin-right;
+   }
+   .setting--margin-right-sm {
+      @include width-sm { @include margin-right }
+   }
+   .setting--margin-right-md {
+      @include width-md { @include margin-right }
+   }
+   .setting--margin-right-lg {
+      @include width-lg { @include margin-right }
+   }
+   .setting--margin-right-xl {
+      @include width-xl { @include margin-right }
+   }
+   .setting--margin-right-xxl {
+      @include width-xxl { @include margin-right }
+   }
+}
+
+@mixin margin-right--large {
+   margin-right: $margin--lg;
+}
+* {
+   .setting--margin-right--large {
+      @include margin-right--large;
+   }
+   .setting--margin-right-sm--large {
+      @include width-sm { @include margin-right--large }
+   }
+   .setting--margin-right-md--large {
+      @include width-md { @include margin-right--large }
+   }
+   .setting--margin-right-lg--large {
+      @include width-lg { @include margin-right--large }
+   }
+   .setting--margin-right-xl--large {
+      @include width-xl { @include margin-right--large }
+   }
+   .setting--margin-right-xxl--large {
+      @include width-xxl { @include margin-right--large }
+   }
+}
+
+@mixin margin-right--xl {
+   margin-right: $margin--xl;
+}
+* {
+   .setting--margin-right--xl {
+      @include margin-right--xl;
+   }
+   .setting--margin-right-sm--xl {
+      @include width-sm { @include margin-right--xl }
+   }
+   .setting--margin-right-md--xl {
+      @include width-md { @include margin-right--xl }
+   }
+   .setting--margin-right-lg--xl {
+      @include width-lg { @include margin-right--xl }
+   }
+   .setting--margin-right-xl--xl {
+      @include width-xl { @include margin-right--xl }
+   }
+   .setting--margin-right-xxl--xl {
+      @include width-xxl { @include margin-right--xl }
+   }
+}
+
+@mixin margin-right--xxl {
+   margin-right: $margin--xxl;
+}
+* {
+   .setting--margin-right--xxl {
+      @include margin-right--xxl;
+   }
+   .setting--margin-right-sm--xxl {
+      @include width-sm { @include margin-right--xxl }
+   }
+   .setting--margin-right-md--xxl {
+      @include width-md { @include margin-right--xxl }
+   }
+   .setting--margin-right-lg--xxl {
+      @include width-lg { @include margin-right--xxl }
+   }
+   .setting--margin-right-xl--xxl {
+      @include width-xl { @include margin-right--xxl }
+   }
+   .setting--margin-right-xxl--xxl {
+      @include width-xxl { @include margin-right--xxl }
+   }
+}
+
+@mixin margin-bottom--xs {
+   margin-bottom: $margin--xs;
+}
+* {
+   .setting--margin-bottom--xs {
+      @include margin-bottom--xs;
+   }
+   .setting--margin-bottom-sm--xs {
+      @include width-sm { @include margin-bottom--xs }
+   }
+   .setting--margin-bottom-md--xs {
+      @include width-md { @include margin-bottom--xs }
+   }
+   .setting--margin-bottom-lg--xs {
+      @include width-lg { @include margin-bottom--xs }
+   }
+   .setting--margin-bottom-xl--xs {
+      @include width-xl { @include margin-bottom--xs }
+   }
+   .setting--margin-bottom-xxl--xs {
+      @include width-xxl { @include margin-bottom--xs }
+   }
+}
+
+@mixin margin-bottom--small {
+   margin-bottom: $margin--sm;
+}
+* {
+   .setting--margin-bottom--small {
+      @include margin-bottom--small;
+   }
+   .setting--margin-bottom-sm--small {
+      @include width-sm { @include margin-bottom--small }
+   }
+   .setting--margin-bottom-md--small {
+      @include width-md { @include margin-bottom--small }
+   }
+   .setting--margin-bottom-lg--small {
+      @include width-lg { @include margin-bottom--small }
+   }
+   .setting--margin-bottom-xl--small {
+      @include width-xl { @include margin-bottom--small }
+   }
+   .setting--margin-bottom-xxl--small {
+      @include width-xxl { @include margin-bottom--small }
+   }
+}
+
+@mixin margin-bottom {
+   margin-bottom: $margin;
+}
+* {
+   .setting--margin-bottom {
+      @include margin-bottom;
+   }
+   .setting--margin-bottom-sm {
+      @include width-sm { @include margin-bottom }
+   }
+   .setting--margin-bottom-md {
+      @include width-md { @include margin-bottom }
+   }
+   .setting--margin-bottom-lg {
+      @include width-lg { @include margin-bottom }
+   }
+   .setting--margin-bottom-xl {
+      @include width-xl { @include margin-bottom }
+   }
+   .setting--margin-bottom-xxl {
+      @include width-xxl { @include margin-bottom }
+   }
+}
+
+@mixin margin-bottom--large {
+   margin-bottom: $margin--lg;
+}
+* {
+   .setting--margin-bottom--large {
+      @include margin-bottom--large;
+   }
+   .setting--margin-bottom-sm--large {
+      @include width-sm { @include margin-bottom--large }
+   }
+   .setting--margin-bottom-md--large {
+      @include width-md { @include margin-bottom--large }
+   }
+   .setting--margin-bottom-lg--large {
+      @include width-lg { @include margin-bottom--large }
+   }
+   .setting--margin-bottom-xl--large {
+      @include width-xl { @include margin-bottom--large }
+   }
+   .setting--margin-bottom-xxl--large {
+      @include width-xxl { @include margin-bottom--large }
+   }
+}
+
+@mixin margin-bottom--xl {
+   margin-bottom: $margin--xl;
+}
+* {
+   .setting--margin-bottom--xl {
+      @include margin-bottom--xl;
+   }
+   .setting--margin-bottom-sm--xl {
+      @include width-sm { @include margin-bottom--xl }
+   }
+   .setting--margin-bottom-md--xl {
+      @include width-md { @include margin-bottom--xl }
+   }
+   .setting--margin-bottom-lg--xl {
+      @include width-lg { @include margin-bottom--xl }
+   }
+   .setting--margin-bottom-xl--xl {
+      @include width-xl { @include margin-bottom--xl }
+   }
+   .setting--margin-bottom-xxl--xl {
+      @include width-xxl { @include margin-bottom--xl }
+   }
+}
+
+@mixin margin-bottom--xxl {
+   margin-bottom: $margin--xxl;
+}
+* {
+   .setting--margin-bottom--xxl {
+      @include margin-bottom--xxl;
+   }
+   .setting--margin-bottom-sm--xxl {
+      @include width-sm { @include margin-bottom--xxl }
+   }
+   .setting--margin-bottom-md--xxl {
+      @include width-md { @include margin-bottom--xxl }
+   }
+   .setting--margin-bottom-lg--xxl {
+      @include width-lg { @include margin-bottom--xxl }
+   }
+   .setting--margin-bottom-xl--xxl {
+      @include width-xl { @include margin-bottom--xxl }
+   }
+   .setting--margin-bottom-xxl--xxl {
+      @include width-xxl { @include margin-bottom--xxl }
+   }
+}
+
+@mixin margin-left--1em {
+   margin-left: 1em;
+}
+* {
+   .setting--margin-left--1em {
+      @include margin-left--1em;
+   }
+   .setting--margin-left-sm--1em {
+      @include width-sm { @include margin-left--1em }
+   }
+   .setting--margin-left-md--1em {
+      @include width-md { @include margin-left--1em }
+   }
+   .setting--margin-left-lg--1em {
+      @include width-lg { @include margin-left--1em }
+   }
+   .setting--margin-left-xl--1em {
+      @include width-xl { @include margin-left--1em }
+   }
+   .setting--margin-left-xxl--1em {
+      @include width-xxl { @include margin-left--1em }
+   }
+}
+
+@mixin margin-left--small {
+   margin-left: $margin--sm;
+}
+* {
+   .setting--margin-left--small {
+      @include margin-left--small;
+   }
+   .setting--margin-left-sm--small {
+      @include width-sm { @include margin-left--small }
+   }
+   .setting--margin-left-md--small {
+      @include width-md { @include margin-left--small }
+   }
+   .setting--margin-left-lg--small {
+      @include width-lg { @include margin-left--small }
+   }
+   .setting--margin-left-xl--small {
+      @include width-xl { @include margin-left--small }
+   }
+   .setting--margin-left-xxl--small {
+      @include width-xxl { @include margin-left--small }
+   }
+}
+
+@mixin margin-left {
+   margin-left: $margin;
+}
+* {
+   .setting--margin-left {
+      @include margin-left;
+   }
+   .setting--margin-left-sm {
+      @include width-sm { @include margin-left }
+   }
+   .setting--margin-left-md {
+      @include width-md { @include margin-left }
+   }
+   .setting--margin-left-lg {
+      @include width-lg { @include margin-left }
+   }
+   .setting--margin-left-xl {
+      @include width-xl { @include margin-left }
+   }
+   .setting--margin-left-xxl {
+      @include width-xxl { @include margin-left }
+   }
+}
+
+@mixin margin-left--large {
+   margin-left: $margin--lg;
+}
+* {
+   .setting--margin-left--large {
+      @include margin-left--large;
+   }
+   .setting--margin-left-sm--large {
+      @include width-sm { @include margin-left--large }
+   }
+   .setting--margin-left-md--large {
+      @include width-md { @include margin-left--large }
+   }
+   .setting--margin-left-lg--large {
+      @include width-lg { @include margin-left--large }
+   }
+   .setting--margin-left-xl--large {
+      @include width-xl { @include margin-left--large }
+   }
+   .setting--margin-left-xxl--large {
+      @include width-xxl { @include margin-left--large }
+   }
+}
+
+@mixin margin-left--xl {
+   margin-left: $margin--xl;
+}
+* {
+   .setting--margin-left--xl {
+      @include margin-left--xl;
+   }
+   .setting--margin-left-sm--xl {
+      @include width-sm { @include margin-left--xl }
+   }
+   .setting--margin-left-md--xl {
+      @include width-md { @include margin-left--xl }
+   }
+   .setting--margin-left-lg--xl {
+      @include width-lg { @include margin-left--xl }
+   }
+   .setting--margin-left-xl--xl {
+      @include width-xl { @include margin-left--xl }
+   }
+   .setting--margin-left-xxl--xl {
+      @include width-xxl { @include margin-left--xl }
+   }
+}
+
+@mixin margin-left--xxl {
+   margin-left: $margin--xxl;
+}
+* {
+   .setting--margin-left--xxl {
+      @include margin-left--xxl;
+   }
+   .setting--margin-left-sm--xxl {
+      @include width-sm { @include margin-left--xxl }
+   }
+   .setting--margin-left-md--xxl {
+      @include width-md { @include margin-left--xxl }
+   }
+   .setting--margin-left-lg--xxl {
+      @include width-lg { @include margin-left--xxl }
+   }
+   .setting--margin-left-xl--xxl {
+      @include width-xl { @include margin-left--xxl }
+   }
+   .setting--margin-left-xxl--xxl {
+      @include width-xxl { @include margin-left--xxl }
+   }
+}
+
+@mixin margin--xs {
+   margin: $margin--xs;
+}
+* {
+   .setting--margin--xs {
+      @include margin--xs;
+   }
+   .setting--margin-sm--xs {
+      @include width-sm { @include margin--xs }
+   }
+   .setting--margin-md--xs {
+      @include width-md { @include margin--xs }
+   }
+   .setting--margin-lg--xs {
+      @include width-lg { @include margin--xs }
+   }
+   .setting--margin-xl--xs {
+      @include width-xl { @include margin--xs }
+   }
+   .setting--margin-xxl--xs {
+      @include width-xxl { @include margin--xs }
+   }
+}
+
+@mixin margin--small {
+   margin: $margin--sm;
+}
+* {
+   .setting--margin--small {
+      @include margin--small;
+   }
+   .setting--margin-sm--small {
+      @include width-sm { @include margin--small }
+   }
+   .setting--margin-md--small {
+      @include width-md { @include margin--small }
+   }
+   .setting--margin-lg--small {
+      @include width-lg { @include margin--small }
+   }
+   .setting--margin-xl--small {
+      @include width-xl { @include margin--small }
+   }
+   .setting--margin-xxl--small {
+      @include width-xxl { @include margin--small }
+   }
+}
+
+@mixin margin {
+   margin: $margin;
+}
+* {
+   .setting--margin {
+      @include margin;
+   }
+   .setting--margin-sm {
+      @include width-sm { @include margin }
+   }
+   .setting--margin-md {
+      @include width-md { @include margin }
+   }
+   .setting--margin-lg {
+      @include width-lg { @include margin }
+   }
+   .setting--margin-xl {
+      @include width-xl { @include margin }
+   }
+   .setting--margin-xxl {
+      @include width-xxl { @include margin }
+   }
+}
+
+@mixin margin--large {
+   margin: $margin--lg;
+}
+* {
+   .setting--margin--large {
+      @include margin--large;
+   }
+   .setting--margin-sm--large {
+      @include width-sm { @include margin--large }
+   }
+   .setting--margin-md--large {
+      @include width-md { @include margin--large }
+   }
+   .setting--margin-lg--large {
+      @include width-lg { @include margin--large }
+   }
+   .setting--margin-xl--large {
+      @include width-xl { @include margin--large }
+   }
+   .setting--margin-xxl--large {
+      @include width-xxl { @include margin--large }
+   }
+}
+
+@mixin margin--xl {
+   margin: $margin--xl;
+}
+* {
+   .setting--margin--xl {
+      @include margin--xl;
+   }
+   .setting--margin-sm--xl {
+      @include width-sm { @include margin--xl }
+   }
+   .setting--margin-md--xl {
+      @include width-md { @include margin--xl }
+   }
+   .setting--margin-lg--xl {
+      @include width-lg { @include margin--xl }
+   }
+   .setting--margin-xl--xl {
+      @include width-xl { @include margin--xl }
+   }
+   .setting--margin-xxl--xl {
+      @include width-xxl { @include margin--xl }
+   }
+}
+
+@mixin margin--xxl {
+   margin: $margin--xxl;
+}
+* {
+   .setting--margin--xxl {
+      @include margin--xxl;
+   }
+   .setting--margin-sm--xxl {
+      @include width-sm { @include margin--xxl }
+   }
+   .setting--margin-md--xxl {
+      @include width-md { @include margin--xxl }
+   }
+   .setting--margin-lg--xxl {
+      @include width-lg { @include margin--xxl }
+   }
+   .setting--margin-xl--xxl {
+      @include width-xl { @include margin--xxl }
+   }
+   .setting--margin-xxl--xxl {
+      @include width-xxl { @include margin--xxl }
+   }
+}
+
+@mixin padding-top--xs {
+   padding-top: $margin--xs;
+}
+* {
+   .setting--padding-top--xs {
+      @include padding-top--xs;
+   }
+   .setting--padding-top-sm--xs {
+      @include width-sm { @include padding-top--xs }
+   }
+   .setting--padding-top-md--xs {
+      @include width-md { @include padding-top--xs }
+   }
+   .setting--padding-top-lg--xs {
+      @include width-lg { @include padding-top--xs }
+   }
+   .setting--padding-top-xl--xs {
+      @include width-xl { @include padding-top--xs }
+   }
+   .setting--padding-top-xxl--xs {
+      @include width-xxl { @include padding-top--xs }
+   }
+}
+
+@mixin padding-top--small {
+   padding-top: $margin--sm;
+}
+* {
+   .setting--padding-top--small {
+      @include padding-top--small;
+   }
+   .setting--padding-top-sm--small {
+      @include width-sm { @include padding-top--small }
+   }
+   .setting--padding-top-md--small {
+      @include width-md { @include padding-top--small }
+   }
+   .setting--padding-top-lg--small {
+      @include width-lg { @include padding-top--small }
+   }
+   .setting--padding-top-xl--small {
+      @include width-xl { @include padding-top--small }
+   }
+   .setting--padding-top-xxl--small {
+      @include width-xxl { @include padding-top--small }
+   }
+}
+
+@mixin padding-top {
+   padding-top: $margin;
+}
+* {
+   .setting--padding-top {
+      @include padding-top;
+   }
+   .setting--padding-top-sm {
+      @include width-sm { @include padding-top }
+   }
+   .setting--padding-top-md {
+      @include width-md { @include padding-top }
+   }
+   .setting--padding-top-lg {
+      @include width-lg { @include padding-top }
+   }
+   .setting--padding-top-xl {
+      @include width-xl { @include padding-top }
+   }
+   .setting--padding-top-xxl {
+      @include width-xxl { @include padding-top }
+   }
+}
+
+@mixin padding-top--large {
+   padding-top: $margin--lg;
+}
+* {
+   .setting--padding-top--large {
+      @include padding-top--large;
+   }
+   .setting--padding-top-sm--large {
+      @include width-sm { @include padding-top--large }
+   }
+   .setting--padding-top-md--large {
+      @include width-md { @include padding-top--large }
+   }
+   .setting--padding-top-lg--large {
+      @include width-lg { @include padding-top--large }
+   }
+   .setting--padding-top-xl--large {
+      @include width-xl { @include padding-top--large }
+   }
+   .setting--padding-top-xxl--large {
+      @include width-xxl { @include padding-top--large }
+   }
+}
+
+@mixin padding-top--xl {
+   padding-top: $margin--xl;
+}
+* {
+   .setting--padding-top--xl {
+      @include padding-top--xl;
+   }
+   .setting--padding-top-sm--xl {
+      @include width-sm { @include padding-top--xl }
+   }
+   .setting--padding-top-md--xl {
+      @include width-md { @include padding-top--xl }
+   }
+   .setting--padding-top-lg--xl {
+      @include width-lg { @include padding-top--xl }
+   }
+   .setting--padding-top-xl--xl {
+      @include width-xl { @include padding-top--xl }
+   }
+   .setting--padding-top-xxl--xl {
+      @include width-xxl { @include padding-top--xl }
+   }
+}
+
+@mixin padding-top--xxl {
+   padding-top: $margin--xxl;
+}
+* {
+   .setting--padding-top--xxl {
+      @include padding-top--xxl;
+   }
+   .setting--padding-top-sm--xxl {
+      @include width-sm { @include padding-top--xxl }
+   }
+   .setting--padding-top-md--xxl {
+      @include width-md { @include padding-top--xxl }
+   }
+   .setting--padding-top-lg--xxl {
+      @include width-lg { @include padding-top--xxl }
+   }
+   .setting--padding-top-xl--xxl {
+      @include width-xl { @include padding-top--xxl }
+   }
+   .setting--padding-top-xxl--xxl {
+      @include width-xxl { @include padding-top--xxl }
+   }
+}
+
+@mixin padding-right--small {
+   padding-right: $margin--sm;
+}
+* {
+   .setting--padding-right--small {
+      @include padding-right--small;
+   }
+   .setting--padding-right-sm--small {
+      @include width-sm { @include padding-right--small }
+   }
+   .setting--padding-right-md--small {
+      @include width-md { @include padding-right--small }
+   }
+   .setting--padding-right-lg--small {
+      @include width-lg { @include padding-right--small }
+   }
+   .setting--padding-right-xl--small {
+      @include width-xl { @include padding-right--small }
+   }
+   .setting--padding-right-xxl--small {
+      @include width-xxl { @include padding-right--small }
+   }
+}
+
+@mixin padding-right {
+   padding-right: $margin;
+}
+* {
+   .setting--padding-right {
+      @include padding-right;
+   }
+   .setting--padding-right-sm {
+      @include width-sm { @include padding-right }
+   }
+   .setting--padding-right-md {
+      @include width-md { @include padding-right }
+   }
+   .setting--padding-right-lg {
+      @include width-lg { @include padding-right }
+   }
+   .setting--padding-right-xl {
+      @include width-xl { @include padding-right }
+   }
+   .setting--padding-right-xxl {
+      @include width-xxl { @include padding-right }
+   }
+}
+
+@mixin padding-right--large {
+   padding-right: $margin--lg;
+}
+* {
+   .setting--padding-right--large {
+      @include padding-right--large;
+   }
+   .setting--padding-right-sm--large {
+      @include width-sm { @include padding-right--large }
+   }
+   .setting--padding-right-md--large {
+      @include width-md { @include padding-right--large }
+   }
+   .setting--padding-right-lg--large {
+      @include width-lg { @include padding-right--large }
+   }
+   .setting--padding-right-xl--large {
+      @include width-xl { @include padding-right--large }
+   }
+   .setting--padding-right-xxl--large {
+      @include width-xxl { @include padding-right--large }
+   }
+}
+
+@mixin padding-right--xl {
+   padding-right: $margin--xl;
+}
+* {
+   .setting--padding-right--xl {
+      @include padding-right--xl;
+   }
+   .setting--padding-right-sm--xl {
+      @include width-sm { @include padding-right--xl }
+   }
+   .setting--padding-right-md--xl {
+      @include width-md { @include padding-right--xl }
+   }
+   .setting--padding-right-lg--xl {
+      @include width-lg { @include padding-right--xl }
+   }
+   .setting--padding-right-xl--xl {
+      @include width-xl { @include padding-right--xl }
+   }
+   .setting--padding-right-xxl--xl {
+      @include width-xxl { @include padding-right--xl }
+   }
+}
+
+@mixin padding-right--xxl {
+   padding-right: $margin--xxl;
+}
+* {
+   .setting--padding-right--xxl {
+      @include padding-right--xxl;
+   }
+   .setting--padding-right-sm--xxl {
+      @include width-sm { @include padding-right--xxl }
+   }
+   .setting--padding-right-md--xxl {
+      @include width-md { @include padding-right--xxl }
+   }
+   .setting--padding-right-lg--xxl {
+      @include width-lg { @include padding-right--xxl }
+   }
+   .setting--padding-right-xl--xxl {
+      @include width-xl { @include padding-right--xxl }
+   }
+   .setting--padding-right-xxl--xxl {
+      @include width-xxl { @include padding-right--xxl }
+   }
+}
+
+@mixin padding-bottom--xs {
+   padding-bottom: $margin--xs;
+}
+* {
+   .setting--padding-bottom--xs {
+      @include padding-bottom--xs;
+   }
+   .setting--padding-bottom-sm--xs {
+      @include width-sm { @include padding-bottom--xs }
+   }
+   .setting--padding-bottom-md--xs {
+      @include width-md { @include padding-bottom--xs }
+   }
+   .setting--padding-bottom-lg--xs {
+      @include width-lg { @include padding-bottom--xs }
+   }
+   .setting--padding-bottom-xl--xs {
+      @include width-xl { @include padding-bottom--xs }
+   }
+   .setting--padding-bottom-xxl--xs {
+      @include width-xxl { @include padding-bottom--xs }
+   }
+}
+
+@mixin padding-bottom--small {
+   padding-bottom: $margin--sm;
+}
+* {
+   .setting--padding-bottom--small {
+      @include padding-bottom--small;
+   }
+   .setting--padding-bottom-sm--small {
+      @include width-sm { @include padding-bottom--small }
+   }
+   .setting--padding-bottom-md--small {
+      @include width-md { @include padding-bottom--small }
+   }
+   .setting--padding-bottom-lg--small {
+      @include width-lg { @include padding-bottom--small }
+   }
+   .setting--padding-bottom-xl--small {
+      @include width-xl { @include padding-bottom--small }
+   }
+   .setting--padding-bottom-xxl--small {
+      @include width-xxl { @include padding-bottom--small }
+   }
+}
+
+@mixin padding-bottom {
+   padding-bottom: $margin;
+}
+* {
+   .setting--padding-bottom {
+      @include padding-bottom;
+   }
+   .setting--padding-bottom-sm {
+      @include width-sm { @include padding-bottom }
+   }
+   .setting--padding-bottom-md {
+      @include width-md { @include padding-bottom }
+   }
+   .setting--padding-bottom-lg {
+      @include width-lg { @include padding-bottom }
+   }
+   .setting--padding-bottom-xl {
+      @include width-xl { @include padding-bottom }
+   }
+   .setting--padding-bottom-xxl {
+      @include width-xxl { @include padding-bottom }
+   }
+}
+
+@mixin padding-bottom--large {
+   padding-bottom: $margin--lg;
+}
+* {
+   .setting--padding-bottom--large {
+      @include padding-bottom--large;
+   }
+   .setting--padding-bottom-sm--large {
+      @include width-sm { @include padding-bottom--large }
+   }
+   .setting--padding-bottom-md--large {
+      @include width-md { @include padding-bottom--large }
+   }
+   .setting--padding-bottom-lg--large {
+      @include width-lg { @include padding-bottom--large }
+   }
+   .setting--padding-bottom-xl--large {
+      @include width-xl { @include padding-bottom--large }
+   }
+   .setting--padding-bottom-xxl--large {
+      @include width-xxl { @include padding-bottom--large }
+   }
+}
+
+@mixin padding-bottom--xl {
+   padding-bottom: $margin--xl;
+}
+* {
+   .setting--padding-bottom--xl {
+      @include padding-bottom--xl;
+   }
+   .setting--padding-bottom-sm--xl {
+      @include width-sm { @include padding-bottom--xl }
+   }
+   .setting--padding-bottom-md--xl {
+      @include width-md { @include padding-bottom--xl }
+   }
+   .setting--padding-bottom-lg--xl {
+      @include width-lg { @include padding-bottom--xl }
+   }
+   .setting--padding-bottom-xl--xl {
+      @include width-xl { @include padding-bottom--xl }
+   }
+   .setting--padding-bottom-xxl--xl {
+      @include width-xxl { @include padding-bottom--xl }
+   }
+}
+
+@mixin padding-bottom--xxl {
+   padding-bottom: $margin--xxl;
+}
+* {
+   .setting--padding-bottom--xxl {
+      @include padding-bottom--xxl;
+   }
+   .setting--padding-bottom-sm--xxl {
+      @include width-sm { @include padding-bottom--xxl }
+   }
+   .setting--padding-bottom-md--xxl {
+      @include width-md { @include padding-bottom--xxl }
+   }
+   .setting--padding-bottom-lg--xxl {
+      @include width-lg { @include padding-bottom--xxl }
+   }
+   .setting--padding-bottom-xl--xxl {
+      @include width-xl { @include padding-bottom--xxl }
+   }
+   .setting--padding-bottom-xxl--xxl {
+      @include width-xxl { @include padding-bottom--xxl }
+   }
+}
+
+@mixin padding-left--small {
+   padding-left: $margin--sm;
+}
+* {
+   .setting--padding-left--small {
+      @include padding-left--small;
+   }
+   .setting--padding-left-sm--small {
+      @include width-sm { @include padding-left--small }
+   }
+   .setting--padding-left-md--small {
+      @include width-md { @include padding-left--small }
+   }
+   .setting--padding-left-lg--small {
+      @include width-lg { @include padding-left--small }
+   }
+   .setting--padding-left-xl--small {
+      @include width-xl { @include padding-left--small }
+   }
+   .setting--padding-left-xxl--small {
+      @include width-xxl { @include padding-left--small }
+   }
+}
+
+@mixin padding-left {
+   padding-left: $margin;
+}
+* {
+   .setting--padding-left {
+      @include padding-left;
+   }
+   .setting--padding-left-sm {
+      @include width-sm { @include padding-left }
+   }
+   .setting--padding-left-md {
+      @include width-md { @include padding-left }
+   }
+   .setting--padding-left-lg {
+      @include width-lg { @include padding-left }
+   }
+   .setting--padding-left-xl {
+      @include width-xl { @include padding-left }
+   }
+   .setting--padding-left-xxl {
+      @include width-xxl { @include padding-left }
+   }
+}
+
+@mixin padding-left--large {
+   padding-left: $margin--lg;
+}
+* {
+   .setting--padding-left--large {
+      @include padding-left--large;
+   }
+   .setting--padding-left-sm--large {
+      @include width-sm { @include padding-left--large }
+   }
+   .setting--padding-left-md--large {
+      @include width-md { @include padding-left--large }
+   }
+   .setting--padding-left-lg--large {
+      @include width-lg { @include padding-left--large }
+   }
+   .setting--padding-left-xl--large {
+      @include width-xl { @include padding-left--large }
+   }
+   .setting--padding-left-xxl--large {
+      @include width-xxl { @include padding-left--large }
+   }
+}
+
+@mixin padding-left--xl {
+   padding-left: $margin--xl;
+}
+* {
+   .setting--padding-left--xl {
+      @include padding-left--xl;
+   }
+   .setting--padding-left-sm--xl {
+      @include width-sm { @include padding-left--xl }
+   }
+   .setting--padding-left-md--xl {
+      @include width-md { @include padding-left--xl }
+   }
+   .setting--padding-left-lg--xl {
+      @include width-lg { @include padding-left--xl }
+   }
+   .setting--padding-left-xl--xl {
+      @include width-xl { @include padding-left--xl }
+   }
+   .setting--padding-left-xxl--xl {
+      @include width-xxl { @include padding-left--xl }
+   }
+}
+
+@mixin padding-left--xxl {
+   padding-left: $margin--xxl;
+}
+* {
+   .setting--padding-left--xxl {
+      @include padding-left--xxl;
+   }
+   .setting--padding-left-sm--xxl {
+      @include width-sm { @include padding-left--xxl }
+   }
+   .setting--padding-left-md--xxl {
+      @include width-md { @include padding-left--xxl }
+   }
+   .setting--padding-left-lg--xxl {
+      @include width-lg { @include padding-left--xxl }
+   }
+   .setting--padding-left-xl--xxl {
+      @include width-xl { @include padding-left--xxl }
+   }
+   .setting--padding-left-xxl--xxl {
+      @include width-xxl { @include padding-left--xxl }
+   }
+}
+
+@mixin padding--xs {
+   padding: $margin--xs;
+}
+* {
+   .setting--padding--xs {
+      @include padding--xs;
+   }
+   .setting--padding-sm--xs {
+      @include width-sm { @include padding--xs }
+   }
+   .setting--padding-md--xs {
+      @include width-md { @include padding--xs }
+   }
+   .setting--padding-lg--xs {
+      @include width-lg { @include padding--xs }
+   }
+   .setting--padding-xl--xs {
+      @include width-xl { @include padding--xs }
+   }
+   .setting--padding-xxl--xs {
+      @include width-xxl { @include padding--xs }
+   }
+}
+
+@mixin padding--small {
+   padding: $margin--sm;
+}
+* {
+   .setting--padding--small {
+      @include padding--small;
+   }
+   .setting--padding-sm--small {
+      @include width-sm { @include padding--small }
+   }
+   .setting--padding-md--small {
+      @include width-md { @include padding--small }
+   }
+   .setting--padding-lg--small {
+      @include width-lg { @include padding--small }
+   }
+   .setting--padding-xl--small {
+      @include width-xl { @include padding--small }
+   }
+   .setting--padding-xxl--small {
+      @include width-xxl { @include padding--small }
+   }
+}
+
+@mixin padding {
+   padding: $margin;
+}
+* {
+   .setting--padding {
+      @include padding;
+   }
+   .setting--padding-sm {
+      @include width-sm { @include padding }
+   }
+   .setting--padding-md {
+      @include width-md { @include padding }
+   }
+   .setting--padding-lg {
+      @include width-lg { @include padding }
+   }
+   .setting--padding-xl {
+      @include width-xl { @include padding }
+   }
+   .setting--padding-xxl {
+      @include width-xxl { @include padding }
+   }
+}
+
+@mixin padding--large {
+   padding: $margin--lg;
+}
+* {
+   .setting--padding--large {
+      @include padding--large;
+   }
+   .setting--padding-sm--large {
+      @include width-sm { @include padding--large }
+   }
+   .setting--padding-md--large {
+      @include width-md { @include padding--large }
+   }
+   .setting--padding-lg--large {
+      @include width-lg { @include padding--large }
+   }
+   .setting--padding-xl--large {
+      @include width-xl { @include padding--large }
+   }
+   .setting--padding-xxl--large {
+      @include width-xxl { @include padding--large }
+   }
+}
+
+@mixin padding--xl {
+   padding: $margin--xl;
+}
+* {
+   .setting--padding--xl {
+      @include padding--xl;
+   }
+   .setting--padding-sm--xl {
+      @include width-sm { @include padding--xl }
+   }
+   .setting--padding-md--xl {
+      @include width-md { @include padding--xl }
+   }
+   .setting--padding-lg--xl {
+      @include width-lg { @include padding--xl }
+   }
+   .setting--padding-xl--xl {
+      @include width-xl { @include padding--xl }
+   }
+   .setting--padding-xxl--xl {
+      @include width-xxl { @include padding--xl }
+   }
+}
+
+@mixin padding--xxl {
+   padding: $margin--xxl;
+}
+* {
+   .setting--padding--xxl {
+      @include padding--xxl;
+   }
+   .setting--padding-sm--xxl {
+      @include width-sm { @include padding--xxl }
+   }
+   .setting--padding-md--xxl {
+      @include width-md { @include padding--xxl }
+   }
+   .setting--padding-lg--xxl {
+      @include width-lg { @include padding--xxl }
+   }
+   .setting--padding-xl--xxl {
+      @include width-xl { @include padding--xxl }
+   }
+   .setting--padding-xxl--xxl {
+      @include width-xxl { @include padding--xxl }
+   }
+}
+
+@mixin gutter-top {
+   margin-top: $gl-gutter-vertical;
+}
+* {
+   .setting--gutter-top {
+      @include gutter-top;
+   }
+   .setting--gutter-top-sm {
+      @include width-sm { @include gutter-top }
+   }
+   .setting--gutter-top-md {
+      @include width-md { @include gutter-top }
+   }
+   .setting--gutter-top-lg {
+      @include width-lg { @include gutter-top }
+   }
+   .setting--gutter-top-xl {
+      @include width-xl { @include gutter-top }
+   }
+   .setting--gutter-top-xxl {
+      @include width-xxl { @include gutter-top }
+   }
+}
+
+@mixin gutter-right {
+   margin-right: $gl-gutter;
+}
+* {
+   .setting--gutter-right {
+      @include gutter-right;
+   }
+   .setting--gutter-right-sm {
+      @include width-sm { @include gutter-right }
+   }
+   .setting--gutter-right-md {
+      @include width-md { @include gutter-right }
+   }
+   .setting--gutter-right-lg {
+      @include width-lg { @include gutter-right }
+   }
+   .setting--gutter-right-xl {
+      @include width-xl { @include gutter-right }
+   }
+   .setting--gutter-right-xxl {
+      @include width-xxl { @include gutter-right }
+   }
+}
+
+@mixin gutter-bottom {
+   margin-bottom: $gl-gutter-vertical;
+}
+* {
+   .setting--gutter-bottom {
+      @include gutter-bottom;
+   }
+   .setting--gutter-bottom-sm {
+      @include width-sm { @include gutter-bottom }
+   }
+   .setting--gutter-bottom-md {
+      @include width-md { @include gutter-bottom }
+   }
+   .setting--gutter-bottom-lg {
+      @include width-lg { @include gutter-bottom }
+   }
+   .setting--gutter-bottom-xl {
+      @include width-xl { @include gutter-bottom }
+   }
+   .setting--gutter-bottom-xxl {
+      @include width-xxl { @include gutter-bottom }
+   }
+}
+
+@mixin gutter-left {
+   margin-left: $gl-gutter;
+}
+* {
+   .setting--gutter-left {
+      @include gutter-left;
+   }
+   .setting--gutter-left-sm {
+      @include width-sm { @include gutter-left }
+   }
+   .setting--gutter-left-md {
+      @include width-md { @include gutter-left }
+   }
+   .setting--gutter-left-lg {
+      @include width-lg { @include gutter-left }
+   }
+   .setting--gutter-left-xl {
+      @include width-xl { @include gutter-left }
+   }
+   .setting--gutter-left-xxl {
+      @include width-xxl { @include gutter-left }
+   }
+}
+
+/* — — — MOVE — — — */
+
+@mixin move-up--small {
+   margin-bottom: $margin--sm;
+   margin-top: -$margin--sm;
+}
+* {
+   .setting--move-up--small {
+      @include move-up--small;
+   }
+   .setting--move-up-sm--small {
+      @include width-sm { @include move-up--small; }
+   }
+   .setting--move-up-md--small {
+      @include width-md { @include move-up--small; }
+   }
+   .setting--move-up-lg--small {
+      @include width-lg { @include move-up--small; }
+   }
+   .setting--move-up-xl--small {
+      @include width-xl { @include move-up--small; }
+   }
+   .setting--move-up-xxl--small {
+      @include width-xxl { @include move-up--small; }
+   }
+}
+
+@mixin move-up {
+   margin-bottom: $margin;
+   margin-top: -$margin;
+}
+* {
+   .setting--move-up {
+      @include move-up;
+   }
+   .setting--move-up-sm {
+      @include width-sm { @include move-up; }
+   }
+   .setting--move-up-md {
+      @include width-md { @include move-up; }
+   }
+   .setting--move-up-lg {
+      @include width-lg { @include move-up; }
+   }
+   .setting--move-up-xl {
+      @include width-xl { @include move-up; }
+   }
+   .setting--move-up-xxl {
+      @include width-xxl { @include move-up; }
+   }
+}
+
+@mixin move-up--large {
+   margin-bottom: $margin--lg;
+   margin-top: -$margin--lg;
+}
+* {
+   .setting--move-up--large {
+      @include move-up--large;
+   }
+   .setting--move-up-sm--large {
+      @include width-sm { @include move-up--large; }
+   }
+   .setting--move-up-md--large {
+      @include width-md { @include move-up--large; }
+   }
+   .setting--move-up-lg--large {
+      @include width-lg { @include move-up--large; }
+   }
+   .setting--move-up-xl--large {
+      @include width-xl { @include move-up--large; }
+   }
+   .setting--move-up-xxl--large {
+      @include width-xxl { @include move-up--large; }
+   }
+}
+
+@mixin move-up--xl {
+   margin-bottom: $margin--xl;
+   margin-top: -$margin--xl;
+}
+* {
+   .setting--move-up--xl {
+      @include move-up--xl;
+   }
+   .setting--move-up-sm--xl {
+      @include width-sm { @include move-up--xl; }
+   }
+   .setting--move-up-md--xl {
+      @include width-md { @include move-up--xl; }
+   }
+   .setting--move-up-lg--xl {
+      @include width-lg { @include move-up--xl; }
+   }
+   .setting--move-up-xl--xl {
+      @include width-xl { @include move-up--xl; }
+   }
+   .setting--move-up-xxl--xl {
+      @include width-xxl { @include move-up--xl; }
+   }
+}
+
+@mixin move-up--xxl {
+   margin-bottom: $margin--xxl;
+   margin-top: -$margin--xxl;
+}
+* {
+   .setting--move-up--xxl {
+      @include move-up--xxl;
+   }
+   .setting--move-up-sm--xxl {
+      @include width-sm { @include move-up--xxl; }
+   }
+   .setting--move-up-md--xxl {
+      @include width-md { @include move-up--xxl; }
+   }
+   .setting--move-up-lg--xxl {
+      @include width-lg { @include move-up--xxl; }
+   }
+   .setting--move-up-xl--xxl {
+      @include width-xl { @include move-up--xxl; }
+   }
+   .setting--move-up-xxl--xxl {
+      @include width-xxl { @include move-up--xxl; }
+   }
+}
+
+@mixin move-right--small {
+   margin-left: $margin--sm;
+   margin-right: -$margin--sm;
+}
+* {
+   .setting--move-right--small {
+      @include move-right--small;
+   }
+   .setting--move-right-sm--small {
+      @include width-sm { @include move-right--small; }
+   }
+   .setting--move-right-md--small {
+      @include width-md { @include move-right--small; }
+   }
+   .setting--move-right-lg--small {
+      @include width-lg { @include move-right--small; }
+   }
+   .setting--move-right-xl--small {
+      @include width-xl { @include move-right--small; }
+   }
+   .setting--move-right-xxl--small {
+      @include width-xxl { @include move-right--small; }
+   }
+}
+
+@mixin move-right {
+   margin-left: $margin;
+   margin-right: -$margin;
+}
+* {
+   .setting--move-right {
+      @include move-right;
+   }
+   .setting--move-right-sm {
+      @include width-sm { @include move-right; }
+   }
+   .setting--move-right-md {
+      @include width-md { @include move-right; }
+   }
+   .setting--move-right-lg {
+      @include width-lg { @include move-right; }
+   }
+   .setting--move-right-xl {
+      @include width-xl { @include move-right; }
+   }
+   .setting--move-right-xxl {
+      @include width-xxl { @include move-right; }
+   }
+}
+
+@mixin move-right--large {
+   margin-left: $margin--lg;
+   margin-right: -$margin--lg;
+}
+* {
+   .setting--move-right--large {
+      @include move-right--large;
+   }
+   .setting--move-right-sm--large {
+      @include width-sm { @include move-right--large; }
+   }
+   .setting--move-right-md--large {
+      @include width-md { @include move-right--large; }
+   }
+   .setting--move-right-lg--large {
+      @include width-lg { @include move-right--large; }
+   }
+   .setting--move-right-xl--large {
+      @include width-xl { @include move-right--large; }
+   }
+   .setting--move-right-xxl--large {
+      @include width-xxl { @include move-right--large; }
+   }
+}
+
+@mixin move-right--xl {
+   margin-left: $margin--xl;
+   margin-right: -$margin--xl;
+}
+* {
+   .setting--move-right--xl {
+      @include move-right--xl;
+   }
+   .setting--move-right-sm--xl {
+      @include width-sm { @include move-right--xl; }
+   }
+   .setting--move-right-md--xl {
+      @include width-md { @include move-right--xl; }
+   }
+   .setting--move-right-lg--xl {
+      @include width-lg { @include move-right--xl; }
+   }
+   .setting--move-right-xl--xl {
+      @include width-xl { @include move-right--xl; }
+   }
+   .setting--move-right-xxl--xl {
+      @include width-xxl { @include move-right--xl; }
+   }
+}
+
+@mixin move-right--xxl {
+   margin-left: $margin--xxl;
+   margin-right: -$margin--xxl;
+}
+* {
+   .setting--move-right--xxl {
+      @include move-right--xxl;
+   }
+   .setting--move-right-sm--xxl {
+      @include width-sm { @include move-right--xxl; }
+   }
+   .setting--move-right-md--xxl {
+      @include width-md { @include move-right--xxl; }
+   }
+   .setting--move-right-lg--xxl {
+      @include width-lg { @include move-right--xxl; }
+   }
+   .setting--move-right-xl--xxl {
+      @include width-xl { @include move-right--xxl; }
+   }
+   .setting--move-right-xxl--xxl {
+      @include width-xxl { @include move-right--xxl; }
+   }
+}
+
+@mixin move-down--small {
+   margin-top: $margin--sm;
+   margin-bottom: -$margin--sm;
+}
+* {
+   .setting--move-down--small {
+      @include move-down--small;
+   }
+   .setting--move-down-sm--small {
+      @include width-sm { @include move-down--small; }
+   }
+   .setting--move-down-md--small {
+      @include width-md { @include move-down--small; }
+   }
+   .setting--move-down-lg--small {
+      @include width-lg { @include move-down--small; }
+   }
+   .setting--move-down-xl--small {
+      @include width-xl { @include move-down--small; }
+   }
+   .setting--move-down-xxl--small {
+      @include width-xxl { @include move-down--small; }
+   }
+}
+
+@mixin move-down {
+   margin-top: $margin;
+   margin-bottom: -$margin;
+}
+* {
+   .setting--move-down {
+      @include move-down;
+   }
+   .setting--move-down-sm {
+      @include width-sm { @include move-down; }
+   }
+   .setting--move-down-md {
+      @include width-md { @include move-down; }
+   }
+   .setting--move-down-lg {
+      @include width-lg { @include move-down; }
+   }
+   .setting--move-down-xl {
+      @include width-xl { @include move-down; }
+   }
+   .setting--move-down-xxl {
+      @include width-xxl { @include move-down; }
+   }
+}
+
+@mixin move-down--large {
+   margin-top: $margin--lg;
+   margin-bottom: -$margin--lg;
+}
+* {
+   .setting--move-down--large {
+      @include move-down--large;
+   }
+   .setting--move-down-sm--large {
+      @include width-sm { @include move-down--large; }
+   }
+   .setting--move-down-md--large {
+      @include width-md { @include move-down--large; }
+   }
+   .setting--move-down-lg--large {
+      @include width-lg { @include move-down--large; }
+   }
+   .setting--move-down-xl--large {
+      @include width-xl { @include move-down--large; }
+   }
+   .setting--move-down-xxl--large {
+      @include width-xxl { @include move-down--large; }
+   }
+}
+
+@mixin move-down--xl {
+   margin-top: $margin--xl;
+   margin-bottom: -$margin--xl;
+}
+* {
+   .setting--move-down--xl {
+      @include move-down--xl;
+   }
+   .setting--move-down-sm--xl {
+      @include width-sm { @include move-down--xl; }
+   }
+   .setting--move-down-md--xl {
+      @include width-md { @include move-down--xl; }
+   }
+   .setting--move-down-lg--xl {
+      @include width-lg { @include move-down--xl; }
+   }
+   .setting--move-down-xl--xl {
+      @include width-xl { @include move-down--xl; }
+   }
+   .setting--move-down-xxl--xl {
+      @include width-xxl { @include move-down--xl; }
+   }
+}
+
+@mixin move-down--xxl {
+   margin-top: $margin--xxl;
+   margin-bottom: -$margin--xxl;
+}
+* {
+   .setting--move-down--xxl {
+      @include move-down--xxl;
+   }
+   .setting--move-down-sm--xxl {
+      @include width-sm { @include move-down--xxl; }
+   }
+   .setting--move-down-md--xxl {
+      @include width-md { @include move-down--xxl; }
+   }
+   .setting--move-down-lg--xxl {
+      @include width-lg { @include move-down--xxl; }
+   }
+   .setting--move-down-xl--xxl {
+      @include width-xl { @include move-down--xxl; }
+   }
+   .setting--move-down-xxl--xxl {
+      @include width-xxl { @include move-down--xxl; }
+   }
+}
+
+@mixin move-left--small {
+   margin-right: $margin--sm;
+   margin-left: -$margin--sm;
+}
+* {
+   .setting--move-left--small {
+      @include move-left--small;
+   }
+   .setting--move-left-sm--small {
+      @include width-sm { @include move-left--small; }
+   }
+   .setting--move-left-md--small {
+      @include width-md { @include move-left--small; }
+   }
+   .setting--move-left-lg--small {
+      @include width-lg { @include move-left--small; }
+   }
+   .setting--move-left-xl--small {
+      @include width-xl { @include move-left--small; }
+   }
+   .setting--move-left-xxl--small {
+      @include width-xxl { @include move-left--small; }
+   }
+}
+
+@mixin move-left {
+   margin-right: $margin;
+   margin-left: -$margin;
+}
+* {
+   .setting--move-left {
+      @include move-left;
+   }
+   .setting--move-left-sm {
+      @include width-sm { @include move-left; }
+   }
+   .setting--move-left-md {
+      @include width-md { @include move-left; }
+   }
+   .setting--move-left-lg {
+      @include width-lg { @include move-left; }
+   }
+   .setting--move-left-xl {
+      @include width-xl { @include move-left; }
+   }
+   .setting--move-left-xxl {
+      @include width-xxl { @include move-left; }
+   }
+}
+
+@mixin move-left--large {
+   margin-right: $margin--lg;
+   margin-left: -$margin--lg;
+}
+* {
+   .setting--move-left--large {
+      @include move-left--large;
+   }
+   .setting--move-left-sm--large {
+      @include width-sm { @include move-left--large; }
+   }
+   .setting--move-left-md--large {
+      @include width-md { @include move-left--large; }
+   }
+   .setting--move-left-lg--large {
+      @include width-lg { @include move-left--large; }
+   }
+   .setting--move-left-xl--large {
+      @include width-xl { @include move-left--large; }
+   }
+   .setting--move-left-xxl--large {
+      @include width-xxl { @include move-left--large; }
+   }
+}
+
+@mixin move-left--xl {
+   margin-right: $margin--xl;
+   margin-left: -$margin--xl;
+}
+* {
+   .setting--move-left--xl {
+      @include move-left--xl;
+   }
+   .setting--move-left-sm--xl {
+      @include width-sm { @include move-left--xl; }
+   }
+   .setting--move-left-md--xl {
+      @include width-md { @include move-left--xl; }
+   }
+   .setting--move-left-lg--xl {
+      @include width-lg { @include move-left--xl; }
+   }
+   .setting--move-left-xl--xl {
+      @include width-xl { @include move-left--xl; }
+   }
+   .setting--move-left-xxl--xl {
+      @include width-xxl { @include move-left--xl; }
+   }
+}
+
+@mixin move-left--xxl {
+   margin-right: $margin--xxl;
+   margin-left: -$margin--xxl;
+}
+* {
+   .setting--move-left--xxl {
+      @include move-left--xxl;
+   }
+   .setting--move-left-sm--xxl {
+      @include width-sm { @include move-left--xxl; }
+   }
+   .setting--move-left-md--xxl {
+      @include width-md { @include move-left--xxl; }
+   }
+   .setting--move-left-lg--xxl {
+      @include width-lg { @include move-left--xxl; }
+   }
+   .setting--move-left-xl--xxl {
+      @include width-xl { @include move-left--xxl; }
+   }
+   .setting--move-left-xxl--xxl {
+      @include width-xxl { @include move-left--xxl; }
+   }
+}
+
+/* — — — BLEED — — — */
+
+@mixin bleed-up--small {
+   margin-top: -$margin--sm;
+}
+* {
+   .setting--bleed-up--small {
+      @include bleed-up--small;
+   }
+   .setting--bleed-up-sm--small {
+      @include width-sm { @include bleed-up--small }
+   }
+   .setting--bleed-up-md--small {
+      @include width-md { @include bleed-up--small }
+   }
+   .setting--bleed-up-lg--small {
+      @include width-lg { @include bleed-up--small }
+   }
+   .setting--bleed-up-xl--small {
+      @include width-xl { @include bleed-up--small }
+   }
+   .setting--bleed-up-xxl--small {
+      @include width-xxl { @include bleed-up--small }
+   }
+}
+
+@mixin bleed-up {
+   margin-top: -$margin;
+}
+* {
+   .setting--bleed-up {
+      @include bleed-up;
+   }
+   .setting--bleed-up-sm {
+      @include width-sm { @include bleed-up }
+   }
+   .setting--bleed-up-md {
+      @include width-md { @include bleed-up }
+   }
+   .setting--bleed-up-lg {
+      @include width-lg { @include bleed-up }
+   }
+   .setting--bleed-up-xl {
+      @include width-xl { @include bleed-up }
+   }
+   .setting--bleed-up-xxl {
+      @include width-xxl { @include bleed-up }
+   }
+}
+
+@mixin bleed-up--large {
+   margin-top: -$margin--lg;
+}
+* {
+   .setting--bleed-up--large {
+      @include bleed-up--large;
+   }
+   .setting--bleed-up-sm--large {
+      @include width-sm { @include bleed-up--large }
+   }
+   .setting--bleed-up-md--large {
+      @include width-md { @include bleed-up--large }
+   }
+   .setting--bleed-up-lg--large {
+      @include width-lg { @include bleed-up--large }
+   }
+   .setting--bleed-up-xl--large {
+      @include width-xl { @include bleed-up--large }
+   }
+   .setting--bleed-up-xxl--large {
+      @include width-xxl { @include bleed-up--large }
+   }
+}
+
+@mixin bleed-up--xl {
+   margin-top: -$margin--xl;
+}
+* {
+   .setting--bleed-up--xl {
+      @include bleed-up--xl;
+   }
+   .setting--bleed-up-sm--xl {
+      @include width-sm { @include bleed-up--xl }
+   }
+   .setting--bleed-up-md--xl {
+      @include width-md { @include bleed-up--xl }
+   }
+   .setting--bleed-up-lg--xl {
+      @include width-lg { @include bleed-up--xl }
+   }
+   .setting--bleed-up-xl--xl {
+      @include width-xl { @include bleed-up--xl }
+   }
+   .setting--bleed-up-xxl--xl {
+      @include width-xxl { @include bleed-up--xl }
+   }
+}
+
+@mixin bleed-up--xxl {
+   margin-top: -$margin--xxl;
+}
+* {
+   .setting--bleed-up--xxl {
+      @include bleed-up--xxl;
+   }
+   .setting--bleed-up-sm--xxl {
+      @include width-sm { @include bleed-up--xxl }
+   }
+   .setting--bleed-up-md--xxl {
+      @include width-md { @include bleed-up--xxl }
+   }
+   .setting--bleed-up-lg--xxl {
+      @include width-lg { @include bleed-up--xxl }
+   }
+   .setting--bleed-up-xl--xxl {
+      @include width-xl { @include bleed-up--xxl }
+   }
+   .setting--bleed-up-xxl--xxl {
+      @include width-xxl { @include bleed-up--xxl }
+   }
+}
+
+@mixin bleed-right--small {
+   margin-right: -$margin--sm;
+}
+* {
+   .setting--bleed-right--small {
+      @include bleed-right--small;
+   }
+   .setting--bleed-right-sm--small {
+      @include width-sm { @include bleed-right--small }
+   }
+   .setting--bleed-right-md--small {
+      @include width-md { @include bleed-right--small }
+   }
+   .setting--bleed-right-lg--small {
+      @include width-lg { @include bleed-right--small }
+   }
+   .setting--bleed-right-xl--small {
+      @include width-xl { @include bleed-right--small }
+   }
+   .setting--bleed-right-xxl--small {
+      @include width-xxl { @include bleed-right--small }
+   }
+}
+
+@mixin bleed-right {
+   margin-right: -$margin;
+}
+* {
+   .setting--bleed-right {
+      @include bleed-right;
+   }
+   .setting--bleed-right-sm {
+      @include width-sm { @include bleed-right }
+   }
+   .setting--bleed-right-md {
+      @include width-md { @include bleed-right }
+   }
+   .setting--bleed-right-lg {
+      @include width-lg { @include bleed-right }
+   }
+   .setting--bleed-right-xl {
+      @include width-xl { @include bleed-right }
+   }
+   .setting--bleed-right-xxl {
+      @include width-xxl { @include bleed-right }
+   }
+}
+
+@mixin bleed-right--large {
+   margin-right: -$margin--lg;
+}
+* {
+   .setting--bleed-right--large {
+      @include bleed-right--large;
+   }
+   .setting--bleed-right-sm--large {
+      @include width-sm { @include bleed-right--large }
+   }
+   .setting--bleed-right-md--large {
+      @include width-md { @include bleed-right--large }
+   }
+   .setting--bleed-right-lg--large {
+      @include width-lg { @include bleed-right--large }
+   }
+   .setting--bleed-right-xl--large {
+      @include width-xl { @include bleed-right--large }
+   }
+   .setting--bleed-right-xxl--large {
+      @include width-xxl { @include bleed-right--large }
+   }
+}
+
+@mixin bleed-right--xl {
+   margin-right: -$margin--xl;
+}
+* {
+   .setting--bleed-right--xl {
+      @include bleed-right--xl;
+   }
+   .setting--bleed-right-sm--xl {
+      @include width-sm { @include bleed-right--xl }
+   }
+   .setting--bleed-right-md--xl {
+      @include width-md { @include bleed-right--xl }
+   }
+   .setting--bleed-right-lg--xl {
+      @include width-lg { @include bleed-right--xl }
+   }
+   .setting--bleed-right-xl--xl {
+      @include width-xl { @include bleed-right--xl }
+   }
+   .setting--bleed-right-xxl--xl {
+      @include width-xxl { @include bleed-right--xl }
+   }
+}
+
+@mixin bleed-right--xxl {
+   margin-right: -$margin--xxl;
+}
+* {
+   .setting--bleed-right--xxl {
+      @include bleed-right--xxl;
+   }
+   .setting--bleed-right-sm--xxl {
+      @include width-sm { @include bleed-right--xxl }
+   }
+   .setting--bleed-right-md--xxl {
+      @include width-md { @include bleed-right--xxl }
+   }
+   .setting--bleed-right-lg--xxl {
+      @include width-lg { @include bleed-right--xxl }
+   }
+   .setting--bleed-right-xl--xxl {
+      @include width-xl { @include bleed-right--xxl }
+   }
+   .setting--bleed-right-xxl--xxl {
+      @include width-xxl { @include bleed-right--xxl }
+   }
+}
+
+@mixin bleed-down--small {
+   margin-bottom: -$margin--sm;
+}
+* {
+   .setting--bleed-down--small {
+      @include bleed-down--small;
+   }
+   .setting--bleed-down-sm--small {
+      @include width-sm { @include bleed-down--small }
+   }
+   .setting--bleed-down-md--small {
+      @include width-md { @include bleed-down--small }
+   }
+   .setting--bleed-down-lg--small {
+      @include width-lg { @include bleed-down--small }
+   }
+   .setting--bleed-down-xl--small {
+      @include width-xl { @include bleed-down--small }
+   }
+   .setting--bleed-down-xxl--small {
+      @include width-xxl { @include bleed-down--small }
+   }
+}
+
+@mixin bleed-down {
+   margin-bottom: -$margin;
+}
+* {
+   .setting--bleed-down {
+      @include bleed-down;
+   }
+   .setting--bleed-down-sm {
+      @include width-sm { @include bleed-down }
+   }
+   .setting--bleed-down-md {
+      @include width-md { @include bleed-down }
+   }
+   .setting--bleed-down-lg {
+      @include width-lg { @include bleed-down }
+   }
+   .setting--bleed-down-xl {
+      @include width-xl { @include bleed-down }
+   }
+   .setting--bleed-down-xxl {
+      @include width-xxl { @include bleed-down }
+   }
+}
+
+@mixin bleed-down--large {
+   margin-bottom: -$margin--lg;
+}
+* {
+   .setting--bleed-down--large {
+      @include bleed-down--large;
+   }
+   .setting--bleed-down-sm--large {
+      @include width-sm { @include bleed-down--large }
+   }
+   .setting--bleed-down-md--large {
+      @include width-md { @include bleed-down--large }
+   }
+   .setting--bleed-down-lg--large {
+      @include width-lg { @include bleed-down--large }
+   }
+   .setting--bleed-down-xl--large {
+      @include width-xl { @include bleed-down--large }
+   }
+   .setting--bleed-down-xxl--large {
+      @include width-xxl { @include bleed-down--large }
+   }
+}
+
+@mixin bleed-down--xl {
+   margin-bottom: -$margin--xl;
+}
+* {
+   .setting--bleed-down--xl {
+      @include bleed-down--xl;
+   }
+   .setting--bleed-down-sm--xl {
+      @include width-sm { @include bleed-down--xl }
+   }
+   .setting--bleed-down-md--xl {
+      @include width-md { @include bleed-down--xl }
+   }
+   .setting--bleed-down-lg--xl {
+      @include width-lg { @include bleed-down--xl }
+   }
+   .setting--bleed-down-xl--xl {
+      @include width-xl { @include bleed-down--xl }
+   }
+   .setting--bleed-down-xxl--xl {
+      @include width-xxl { @include bleed-down--xl }
+   }
+}
+
+@mixin bleed-down--xxl {
+   margin-bottom: -$margin--xxl;
+}
+* {
+   .setting--bleed-down--xxl {
+      @include bleed-down--xxl;
+   }
+   .setting--bleed-down-sm--xxl {
+      @include width-sm { @include bleed-down--xxl }
+   }
+   .setting--bleed-down-md--xxl {
+      @include width-md { @include bleed-down--xxl }
+   }
+   .setting--bleed-down-lg--xxl {
+      @include width-lg { @include bleed-down--xxl }
+   }
+   .setting--bleed-down-xl--xxl {
+      @include width-xl { @include bleed-down--xxl }
+   }
+   .setting--bleed-down-xxl--xxl {
+      @include width-xxl { @include bleed-down--xxl }
+   }
+}
+
+@mixin bleed-left--small {
+   margin-left: -$margin--sm;
+}
+* {
+   .setting--bleed-left--small {
+      @include bleed-left--small;
+   }
+   .setting--bleed-left-sm--small {
+      @include width-sm { @include bleed-left--small }
+   }
+   .setting--bleed-left-md--small {
+      @include width-md { @include bleed-left--small }
+   }
+   .setting--bleed-left-lg--small {
+      @include width-lg { @include bleed-left--small }
+   }
+   .setting--bleed-left-xl--small {
+      @include width-xl { @include bleed-left--small }
+   }
+   .setting--bleed-left-xxl--small {
+      @include width-xxl { @include bleed-left--small }
+   }
+}
+
+@mixin bleed-left {
+   margin-left: -$margin;
+}
+* {
+   .setting--bleed-left {
+      @include bleed-left;
+   }
+   .setting--bleed-left-sm {
+      @include width-sm { @include bleed-left }
+   }
+   .setting--bleed-left-md {
+      @include width-md { @include bleed-left }
+   }
+   .setting--bleed-left-lg {
+      @include width-lg { @include bleed-left }
+   }
+   .setting--bleed-left-xl {
+      @include width-xl { @include bleed-left }
+   }
+   .setting--bleed-left-xxl {
+      @include width-xxl { @include bleed-left }
+   }
+}
+
+@mixin bleed-left--large {
+   margin-left: -$margin--lg;
+}
+* {
+   .setting--bleed-left--large {
+      @include bleed-left--large;
+   }
+   .setting--bleed-left-sm--large {
+      @include width-sm { @include bleed-left--large }
+   }
+   .setting--bleed-left-md--large {
+      @include width-md { @include bleed-left--large }
+   }
+   .setting--bleed-left-lg--large {
+      @include width-lg { @include bleed-left--large }
+   }
+   .setting--bleed-left-xl--large {
+      @include width-xl { @include bleed-left--large }
+   }
+   .setting--bleed-left-xxl--large {
+      @include width-xxl { @include bleed-left--large }
+   }
+}
+
+@mixin bleed-left--xl {
+   margin-left: -$margin--xl;
+}
+* {
+   .setting--bleed-left--xl {
+      @include bleed-left--xl;
+   }
+   .setting--bleed-left-sm--xl {
+      @include width-sm { @include bleed-left--xl }
+   }
+   .setting--bleed-left-md--xl {
+      @include width-md { @include bleed-left--xl }
+   }
+   .setting--bleed-left-lg--xl {
+      @include width-lg { @include bleed-left--xl }
+   }
+   .setting--bleed-left-xl--xl {
+      @include width-xl { @include bleed-left--xl }
+   }
+   .setting--bleed-left-xxl--xl {
+      @include width-xxl { @include bleed-left--xl }
+   }
+}
+
+@mixin bleed-left--xxl {
+   margin-left: -$margin--xxl;
+}
+* {
+   .setting--bleed-left--xxl {
+      @include bleed-left--xxl;
+   }
+   .setting--bleed-left-sm--xxl {
+      @include width-sm { @include bleed-left--xxl }
+   }
+   .setting--bleed-left-md--xxl {
+      @include width-md { @include bleed-left--xxl }
+   }
+   .setting--bleed-left-lg--xxl {
+      @include width-lg { @include bleed-left--xxl }
+   }
+   .setting--bleed-left-xl--xxl {
+      @include width-xl { @include bleed-left--xxl }
+   }
+   .setting--bleed-left-xxl--xxl {
+      @include width-xxl { @include bleed-left--xxl }
+   }
+}
+
+/* — — — FLEXBOX — — — */
+
+@mixin display--flex {
+   display: flex;
+}
+* {
+   .setting--display--flex {
+      @include display--flex;
+   }
+   .setting--display--flex-sm {
+      @include width-sm { @include display--flex; }
+   }
+   .setting--display--flex-md {
+      @include width-md { @include display--flex; }
+   }
+   .setting--display--flex-lg {
+      @include width-lg { @include display--flex; }
+   }
+   .setting--display--flex-xl {
+      @include width-xl { @include display--flex; }
+   }
+   .setting--display--flex-xxl {
+      @include width-xxl { @include display--flex; }
+   }
+}
+
+.setting--flex-column {
+   flex-direction: column;
+}
+
+.setting--flex-equal-size {
+   flex: 1 1 0;
+}
+
+.setting--flex-wrap {
+   flex-wrap: wrap;
+}
+
+.setting--flex-justify-start {
+   justify-content: flex-start;
+}
+
+.setting--flex-justify-end {
+   justify-content: flex-end;
+}
+
+.setting--flex-space-between {
+   justify-content: space-between;
+}
+
+.setting--flex-space-around {
+   justify-content: space-around;
+}
+
+.setting--flex-align--center {
+   align-items: center;
+}
+
+.setting--flex-center,
+.setting--flex-bottom {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   &, & > * {
+       max-width: 100%;
+   }
+}
+
+.setting--flex-center,
+.setting--flex-justify--center {
+   display: flex;
+   justify-content: center;
+}
+
+.setting--flex-bottom {
+   justify-content: flex-end;
+}
+
+.setting--flex-right {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.setting--order--first {
+   order: -1!important;
+}
+
+.setting--order--last {
+   order: 1!important;
+}
+
+.setting--order-md--first {
+   order: 1!important;
+   @include width-md {
+      order: -1!important;
+   }
+}
+
+.setting--order-md--last {
+   order: -1!important;
+   @include width-md {
+      order: 1!important;
+   }
+}
+
+.setting--order-lg--first {
+   order: 1!important;
+   @include width-lg {
+      order: -1!important;
+   }
+}
+
+.setting--order-lg--last {
+   order: -1!important;
+   @include width-lg {
+      order: 1!important;
+   }
+}
+
+.setting--order-xl--first {
+   order: 1!important;
+   @include width-xl {
+      order: -1!important;
+   }
+}
+
+.setting--order-xl--last {
+   order: -1!important;
+   @include width-xl {
+      order: 1!important;
+   }
+}
+
+/* — — — COLORS — — — */
+
+.setting--color--primary {
+   color: $color--primary !important;
+   u {
+      border-color: $color--primary; // !important;
+   }
+}
+
+.setting--color--secondary {
+   color: $color--secondary !important;
+   u {
+      border-color: $color--secondary; // !important;
+   }
+}
+
+.setting--color--white {
+   &, a {
+      color: $color--white !important;
+   }
+}
+
+.setting--color--black {
+   &, a {
+      color: $color--black !important;
+   }
+   u {
+      border-bottom-color: $color--black !important;
+   }
+}
+
+.setting--color--light-grey {
+   color: $color--light-grey !important;
+   u {
+      border-color: $color--light-grey; // !important;
+   }
+}
+
+.setting--color--grey {
+   color: $color--grey !important;
+   u {
+      border-color: $color--grey; // !important;
+   }
+   transition: color $speed;
+   a:hover, a:hover & {
+      color: $color--black;
+   }
+}
+
+.setting--color--dark-grey {
+   color: $color--dark-grey !important;
+   u {
+      border-color: $color--dark-grey; // !important;
+   }
+}
+
+.setting--fill--primary {
+  background: $color--primary !important;
+}
+
+.setting--fill--secondary {
+  background: $color--secondary !important;
+}
+
+.setting--fill--white {
+  background: $color--white !important;
+}
+
+.setting--fill--black {
+  background: $color--black !important;
+}
+
+.setting--fill--light-grey {
+  background: $color--light-grey !important;
+}
+
+.setting--fill--grey {
+  background: $color--grey !important;
+}
+
+.setting--fill--dark-grey {
+   background: $color--dark-grey;
+}
+
+/* — — — POSITIONS — — — */
+
+.setting--pos-relative {
+  position: relative;
+}
+
+@mixin pos-absolute {
+  position: absolute;
+}
+* {
+   .setting--pos-absolute {
+      @include pos-absolute;
+   }
+   .setting--pos-absolute-sm {
+      @include width-sm { @include pos-absolute; }
+   }
+   .setting--pos-absolute-md {
+      @include width-md { @include pos-absolute; }
+   }
+   .setting--pos-absolute-lg {
+      @include width-lg { @include pos-absolute; }
+   }
+   .setting--pos-absolute-xl {
+      @include width-xl { @include pos-absolute; }
+   }
+   .setting--pos-absolute-xxl {
+      @include width-xxl { @include pos-absolute; }
+   }
+}
+
+.setting--pos-fixed {
+  position: fixed;
+}
+
+.setting--pos-static {
+  position: static;
+}
+
+.setting--absolute-top {
+   position: absolute;
+   top: 0;
+}
+
+.setting--absolute-right {
+   position: absolute;
+   right: 0;
+}
+
+.setting--absolute-bottom {
+   position: absolute;
+   bottom: 0;
+}
+
+.setting--absolute-left {
+   position: absolute;
+   left: 0;
+}
+
+.setting--absolute-top-center {
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.setting--absolute-top-center-md {
+   @include width-md {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+}
+
+.setting--absolute-top-right {
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
+.setting--absolute-top-right-md {
+   @include width-md {
+      position: absolute;
+      top: 0;
+      right: 0;
+   }
+}
+
+.setting--absolute-middle-right {
+   position: absolute;
+   top: 50%;
+   right: 0;
+   transform: translateY(-50%);
+}
+
+.setting--absolute-middle-right-md {
+   @include width-md {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+   }
+}
+
+.setting--absolute-bottom-right {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+}
+
+.setting--absolute-bottom-right-md {
+   @include width-md {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+   }
+}
+
+.setting--absolute-bottom-center {
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.setting--absolute-bottom-center-md {
+   @include width-md {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+}
+
+.setting--absolute-bottom-left {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+}
+
+.setting--absolute-bottom-left-md {
+   @include width-md {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+   }
+}
+
+.setting--absolute-middle-left {
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+}
+
+.setting--absolute-middle-left-md {
+   @include width-md {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+   }
+}
+
+.setting--absolute-top-left {
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+@mixin image-absolute-center {
+   display: block;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   @media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+      // IE fallback
+      top: 50%;
+      right: auto;
+      bottom: auto;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: auto;
+   }
+}
+* {
+   .setting--image-absolute-center {
+      @include image-absolute-center;
+   }
+   .setting--image-absolute-center-sm {
+      @include width-sm { @include image-absolute-center; }
+   }
+   .setting--image-absolute-center-md {
+      @include width-md { @include image-absolute-center; }
+   }
+   .setting--image-absolute-center-lg {
+      @include width-lg { @include image-absolute-center; }
+   }
+   .setting--image-absolute-center-xl {
+      @include width-xl { @include image-absolute-center; }
+   }
+   .setting--image-absolute-center-xxl {
+      @include width-xxl { @include image-absolute-center; }
+   }
+}
+
+.setting--image-absolute img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+.setting--content-absolute-center {
+   position: absolute;
+   top: 50%;
+   left: 0;
+   right: 0;
+   width: 100%;
+   transform: translateY(-50%);
+   z-index: 2;
+}
+
+.setting--content-absolute-center-md {
+   @include width-md {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 2;
+   }
+}
+
+.setting--content-absolute-center-lg {
+   @include width-lg {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 2;
+   }
+}
+
+.setting--content-absolute-center-xl {
+   @include width-xl {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 2;
+   }
+}
+
+/* — — — TYPOPGRAPHY — — — */
+
+.setting--line-height-normal {
+  line-height: 1 !important;
+}
+
+.setting--font-weight-strong {
+  font-weight: 700 !important;
+}
+
+.setting--font-size-zero {
+  font-size: 0;
+}
+
+.setting--white-space--nowrap {
+   white-space: nowrap;
+}
+
+.setting--font-sans-serif {
+  font-family: $font-family--sans-serif !important;
+}
+
+.setting--case-uppercase {
+  text-transform: uppercase;
+}
+
+@mixin rotate {
+   // parent needs setting--height--100-percent
+   position: relative;
+   height: 100%;
+   span {
+      //parent (above) needs typography-setting
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      white-space: nowrap;
+   }
+}
+
+@mixin rotate-left {
+   span {
+      transform: translate(-50%, -50%) rotate(-90deg);
+   }
+}
+
+@mixin rotate-right {
+   span {
+      transform: translate(-50%, -50%) rotate(90deg);
+   }
+}
+
+@mixin rotate-small {
+   width: $margin--sm;
+}
+
+@mixin rotate-medium {
+   width: $margin;
+}
+
+@mixin rotate-large {
+   width: $margin--lg;
+}
+
+.setting--rotate-left--small {
+   @include rotate;
+   @include rotate-small;
+   @include rotate-left;
+}
+.setting--rotate-left {
+   @include rotate;
+   @include rotate-medium;
+   @include rotate-left;
+}
+.setting--rotate-left--large {
+   @include rotate;
+   @include rotate-large;
+   @include rotate-left;
+}
+.setting--rotate-right--small {
+   @include rotate;
+   @include rotate-small;
+   @include rotate-right;
+}
+.setting--rotate-right {
+   @include rotate;
+   @include rotate-medium;
+   @include rotate-right;
+}
+.setting--rotate-right--large {
+   @include rotate;
+   @include rotate-large;
+   @include rotate-right;
+}
+
+/* — — — RATIO BOXES — — — */
+
+@mixin ratio-box {
+   width: 100%;
+   &:before {
+      content: "";
+      display: block;
+   }
+}
+
+.setting--vertical-box,
+.setting--vertical-box-short,
+.setting--horizontal-box,
+.setting--horizontal-box-wide,
+.setting--square-box {
+   @include ratio-box;
+}
+
+.setting--vertical-box-sm,
+.setting--vertical-box-short-sm,
+.setting--horizontal-box-sm,
+.setting--horizontal-box-wide-sm,
+.setting--square-box-sm {
+   @include width-sm { @include ratio-box; }
+}
+
+.setting--vertical-box-md,
+.setting--vertical-box-short-md,
+.setting--horizontal-box-md,
+.setting--horizontal-box-wide-md,
+.setting--square-box-md {
+   @include width-md { @include ratio-box; }
+}
+
+.setting--vertical-box-lg,
+.setting--vertical-box-short-lg,
+.setting--horizontal-box-lg,
+.setting--horizontal-box-wide-lg,
+.setting--square-box-lg {
+   @include width-lg { @include ratio-box; }
+}
+
+.setting--vertical-box-xl,
+.setting--vertical-box-short-xl,
+.setting--horizontal-box-xl,
+.setting--horizontal-box-wide-xl,
+.setting--square-box-xl {
+   @include width-xl { @include ratio-box; }
+}
+
+.setting--vertical-box-xxl,
+.setting--vertical-box-short-xxl,
+.setting--horizontal-box-xxl,
+.setting--horizontal-box-wide-xxl,
+.setting--square-box-xxl {
+   @include width-xxl { @include ratio-box; }
+}
+
+@mixin vertical-box {
+   &:before {
+      padding-top: (3 / 2) * 100%;
+   }
+}
+
+.setting--vertical-box,
+.setting--vertical-box-sm,
+.setting--vertical-box-md,
+.setting--vertical-box-lg,
+.setting--vertical-box-xl,
+.setting--vertical-box-xxl {
+   @include vertical-box;
+}
+
+@mixin vertical-box-short {
+   &:before {
+      padding-top: (4 / 3) * 100%;
+   }
+}
+
+.setting--vertical-box-short,
+.setting--vertical-box-short-sm,
+.setting--vertical-box-short-md,
+.setting--vertical-box-short-lg,
+.setting--vertical-box-short-xl,
+.setting--vertical-box-short-xxl {
+   @include vertical-box-short;
+}
+
+@mixin horizontal-box {
+   &:before {
+      padding-top: (2 / 3) * 100%;
+   }
+}
+
+.setting--horizontal-box,
+.setting--horizontal-box-sm,
+.setting--horizontal-box-md,
+.setting--horizontal-box-lg,
+.setting--horizontal-box-xl,
+.setting--horizontal-box-xxl {
+   @include horizontal-box;
+}
+
+@mixin horizontal-box-wide {
+   &:before {
+      padding-top: (1 / 2.1) * 100%;
+   }
+}
+
+.setting--horizontal-box-wide,
+.setting--horizontal-box-wide-sm,
+.setting--horizontal-box-wide-md,
+.setting--horizontal-box-wide-lg,
+.setting--horizontal-box-wide-xl,
+.setting--horizontal-box-wide-xxl {
+   @include horizontal-box-wide;
+}
+
+@mixin square-box {
+   &:before {
+      padding-top: 100%;
+   }
+}
+
+.setting--square-box,
+.setting--square-box-sm,
+.setting--square-box-md,
+.setting--square-box-lg,
+.setting--square-box-xl,
+.setting--square-box-xxl {
+   @include square-box;
+}
+
+/* — — — DISPLAY — — — */
+
+.setting--display--none {
+   display: none;
+}
+
+.setting--display--block {
+   display: block;
+}
+
+.setting--display--inline-block {
+   display: inline-block;
+}
+
+/* — — — RESETS — — — */
+
+.setting--no-margin {
+  margin: 0 !important;
+}
+
+.setting--no-padding {
+  padding: 0 !important;
+}
+
+.setting--no-padding-top {
+  padding-top: 0 !important;
+}
+
+.setting--no-border {
+  border: 0 !important;
+}
+
+/* — — — MISC — — — */
+
+.setting--overflow-hidden {
+   overflow: hidden;
+}
+
+.setting--z-index-bottom {
+   z-index: 0;
+}
+
+.setting--z-index-middle {
+   z-index: 1;
+}
+
+.setting--width--100-percent {
+   width: 100%;
+}
+
+.setting--height--100-percent {
+   height: 100%;
+}
+
+.setting--z-index-top {
+   z-index: 2;
+}
+
+.setting--column-2 {
+   @include width-md {
+      column-count: 2;
+      column-gap: $gl-gutter/2;
+   }
+}
+
+.setting--column-3 {
+   @include width-md {
+      column-count: 2;
+      column-gap: $gl-gutter/2;
+   }
+   @include width-lg {
+      column-count: 3;
+   }
+}
+
+
+/* — — — SITE SPECIFIC — — — */
+
+.setting--text-link {
+   transition: color $speed;
+   &:hover {
+      color: $color--primary !important;
+   }
+}
+
+.setting--textbox-link--content {
+   transition: background $speed;
+   .setting--textbox-link:hover & {
+      background: $color--dark-grey !important;
+   }
+}
+
+.setting--textbox-link--content-text {
+   transition: color $speed, border-color $speed;
+   .setting--textbox-link:hover & {
+      color: $color--white !important;
+      u {
+         border-color: $color--white !important;
+      }
+   }
+}
+
+.setting--textbox-link--content-button {
+   transition: background $speed, border-color $speed;
+   &:before {
+      border-color: $color--white;
+   }
+   background: $color--black;
+   .setting--textbox-link:hover & {
+      &:before {
+         border-color: $color--black;
+      }
+      background: $color--white;
+   }
+   .setting--fill--black &,
+   .setting--fill--dark-grey & {
+      background: $color--primary !important;
+      .setting--textbox-link:hover & {
+         &:before {
+            border-color: $color--black;
+         }
+         background: $color--white !important;
+      }
+   }
+}
+
+.setting--text-button-link--text {
+   color: $color--black !important;
+   .setting--fill--dark-grey &,
+   .setting--fill--black & {
+      color: $color--white !important;
+   }
+   transition: color $speed;
+   .setting--text-button-link:hover & {
+      color: $color--dark-grey !important;
+      .setting--fill--dark-grey &,
+      .setting--fill--black & {
+         color: $color--secondary !important;
+      }
+   }
+}
+
+.setting--text-button-link--button {
+   transition: background $speed;
+   background: $color--primary;
+   &:before {
+      border-color: $color--white !important;
+   }
+   .setting--text-button-link:hover & {
+      background: $color--dark-grey;
+      .setting--fill--dark-grey &,
+      .setting--fill-black & {
+         background: $color--secondary;
+      }
+   }
+}
+
+// col-5_xl-6_lg-12
+.setting--box-max-width {
+   @include width-md {
+      max-width: 26rem;
+   }
+   @include width-lg {
+      max-width: 17rem;
+   }
+   @include width-xl {
+      max-width: 18rem;
+   }
+}
+
+// col-7_xxl-8_xl-10_lg-12
+.setting--box-max-width--large {
+   @include width-md {
+      max-width: 27rem;
+   }
+   @include width-lg {
+      max-width: 28rem;
+   }
+   @include width-xl {
+      max-width: 30rem;
+   }
+   @include width-xxl {
+      max-width: 27rem;
+   }
+}
+
+.setting--horisontal-gradient {
+  position: relative;
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0))
+  }
+}

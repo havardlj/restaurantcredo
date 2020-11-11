@@ -1,0 +1,63 @@
+{% if journalEntry is not defined %}
+	{% set journalEntry = module.customChooseJournal.first() %}
+{% endif %}
+
+{% if imagePos is not defined %}
+	{% set imagePos = module.settingImagePosition %}
+{% endif %}
+
+{% if settingTextOverImage is not defined %}
+	{% set settingTextOverImage = module.settingTextOverImage %}
+{% endif %}
+
+{% if journalEntry | length %}
+
+{% set journalTitle = journalEntry.title %}
+{% set journalLead = journalEntry.standardLeadText %}
+{% set journalUrl = journalEntry.url %}
+{% set journalImage = journalEntry.standardImages.first %}
+{% set journalContent = journalEntry.standardContent %}
+{% set journalPostDate = journalEntry.postDate | date('F j') %}
+
+{% set text %}
+		<div class="col-5_lg-11{{ imagePos != "left" ? " setting--order-lg--first" }}" data-push-right="off-1">
+			<div class="setting--display--flex setting--flex-column setting--flex-space-between setting--height--100-percent setting--padding-top setting--padding-lg{{ imagePos != "left" ? " setting--align-right" }}">
+				<div class="{{ settingTextOverImage ? ' setting--move-left-lg--xl' }}setting--pos-relative setting--z-index-top setting--margin-bottom">
+					<a class="setting--display--block heading--medium"{% if journalContent is not empty %} href="{{ journalUrl }}"{% endif %}>{{ journalTitle }}</a>
+					<div class="typography"><p>{{ journalLead }}</p></div>
+				</div>
+				{% if journalContent is not empty %}
+					<div class="typography"><a href="{{ journalUrl }}" class="link">{{ currentLang == "en" ? "Read more" : "Les mer" }}</a></div>
+				{% endif %}
+			</div>
+		</div>
+{% endset %}
+
+{% set image %}
+	<div class="col-6_lg-12{{ imagePos != 'left' ? " setting--order-lg--last" }}">
+		<div class="setting--display--flex-lg setting--height--100-percent">
+		<div class="heading--small heading-over-image-mobile{{ imagePos != "left" ? " setting--align-right" }}">Credo Journal — {{ journalPostDate }}</div>
+			<div class="heading-over-image-desktop {{ imagePos != "left" ? "setting--order--last " }}heading--small setting--rotate-{{ imagePos == "left" ? "left" : "right" }}--large setting--bleed-{{ imagePos == "left" ? "left" : "right" }} setting--z-index-top"><span>Credo Journal — {{ journalPostDate }}</span></div>
+			<div class="{{ imagePos != "left" ? "setting--order--first " }}setting--horizontal-box setting--pos-relative setting--overflow-hidden setting--image-absolute">
+				{% set transformedImages = craft.imager.transformImage(journalImage, [
+					{ width: 1200 },
+					{ width: 600 },
+					], {},
+					{ fillTransforms: true }) %}
+					<a {% if journalContent is not empty %} href="{{ journalUrl }}"{% endif %}>
+						<img class="lazyload--image lazyload" src="{{ craft.imager.base64Pixel(16, 9) }}" sizes="50vw" srcset="{{ craft.imager.srcset(transformedImages) }}">
+					</a>
+			</div>
+		</div>
+	</div>
+{% endset %}
+
+</div>
+<div class="container-{{ imagePos }} setting--gutter-bottom js--in-view">
+	<div class="grid-noGutter">
+		{{ image }}
+		{{ text }}
+	</div>
+</div>
+<div class="container">
+{% endif %}

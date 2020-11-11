@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+
+<link rel="icon" type="image/png" href="/assets/build/img/favicon.png" />
+
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+{# Stop search engines from indexing the site while in development #}
+{% if craft.config.environment!='prod'  %}
+	<meta name="robots" content="noindex, nofollow">
+{% endif %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="twitter:widgets:csp" content="on">
+
+{% hook 'seomaticRender' %}
+
+<link rel="stylesheet" href="/assets/build/css/main.css?v=3">
+<noscript>
+	<link rel="stylesheet" href="/assets/build/css/noscript.css">
+</noscript>

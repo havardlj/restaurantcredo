@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+
+{# Only use prefetch of domains not available in the HTML #}
+<link rel="dns-prefetch" href="//s3.amazonaws.com">
+
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+{# Stop search engines from indexing the site while in development #}
+{% if craft.config.environment!='prod'  %}
+	<meta name="robots" content="noindex, nofollow">
+{% endif %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="twitter:widgets:csp" content="on">
+
+{% hook 'seomaticRender' %}
+
+{# Any font includes go here #}
+<link rel="icon" href="assets/build/img/favicon.png">
+
+<script src="https://use.typekit.net/udo2qog.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+{# Include CSS #}
+  <link rel="stylesheet" href="/assets/build/css/main.css?v11">
+
+<noscript>
+	<link rel="stylesheet" href="/assets/build/css/noscript.css">
+</noscript>

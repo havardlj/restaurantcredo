@@ -1,0 +1,138 @@
+select,
+option,
+input[type=text],
+textarea {
+   appearance: none;
+   background: transparent;
+   &:focus {
+      outline: $color--primary
+   }
+   &::placeholder {
+      color: $color--dark-grey;
+   }
+}
+
+select {
+   border: 0px solid transparent;
+   padding: .25em .91em .25em .33em;
+}
+
+
+.form--input-text {
+   width: 100%;
+   //opacity: .5;
+   color: $color--black;
+   border-bottom: 1px solid $color--dark-grey;
+   transition: opacity $speed;
+   &::placeholder {
+      color: $color--dark-grey;
+   }
+   &:focus {
+      opacity: 1;
+      &::placeholder {
+      }
+   }
+}
+
+.form--subtext {
+   position: absolute;
+   pointer-events: none;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+   transition: $speed ease all;
+   input:focus ~ &,
+   input:not(:focus):valid ~ & {
+      top: 100%;
+      transform: translateY(0%);
+      text-transform: uppercase;
+      font-size: .75em;
+   }
+}
+
+
+.form--label {
+
+}
+
+.form--textarea {
+  resize: none;
+  height: 10em;
+}
+
+.form--button {
+
+  background: $color--secondary;
+  border-radius: 99em;
+  color: #fff;
+  padding: $margin;
+  border: 0;
+  -webkit-appearance: none;
+  @include font-size($fs-p);
+  width: 100%;
+
+}
+
+.form--input-checkbox,
+.form--input-radio,
+.form--input-select {
+   display: none;
+   & + .form--label {
+      cursor: pointer;
+      position: relative;
+      &:before {
+         position: relative;
+      }
+      &:hover:before {
+         color: $color--placeholder;
+
+      }
+   }
+   &:checked + .form--label:before {
+      color: $color--black;
+   }
+}
+
+.form--input-checkbox,
+.form--input-radio {
+   & + .form--label {
+      margin-bottom: .25em;
+      &:before {
+         content: "\2713";
+         top: 0;
+         background: $color--white;
+         width: 1em;
+         height: 1em;
+         line-height: .75em;
+         color: transparent;
+         display: inline-block;
+         transition: background $speed, border-color $speed;
+         border: 1px solid $color--border;
+         margin-right: 0.5em;
+         font-size: 1.5em;
+         transition: color $speed;
+      }
+   }
+}
+
+.form--fieldset {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+.form--select {
+   position: relative;
+   &:after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      display: inline-block;
+      transform: rotate(45deg);
+      border-right: 1px solid $color--grey;
+      border-bottom: 1px solid $color--grey;
+      width: .33em;
+      height: .33em;
+      top: .5em;
+      right: .25em;
+   }
+}

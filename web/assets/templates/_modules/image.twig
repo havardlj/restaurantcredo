@@ -1,0 +1,16 @@
+<div class="grid js--in-view">
+	<div class={{ module.settingImageWidth == "50" ? '"col-8" data-push-left="off-2" data-push-right="off-2"' : '"col-12"' }}>
+		<div class="setting--display--flex setting--height--100-percent">
+			<div class="{{ module.settingImageWidth != "50" ? "setting--horizontal-box setting--image-absolute setting--overflow-hidden " }}setting--pos-relative">
+        {% if module.standardImages.first %}{% set transformedImages = craft.imager.transformImage(module.standardImages.first, [
+					{ width: 1200 },
+					{ width: 600 },
+					], {  },
+					{ fillTransforms: true }) %}
+					<img src="{{ craft.imager.base64Pixel(16, 9) }}" sizes="90vw" class="lazyload--image lazyload" srcset="{{ craft.imager.srcset(transformedImages) }}">{% endif %}
+
+			</div>
+		</div>
+	</div>
+
+</div>
